@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained()->onDelete('SET NULL');
+            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained('id')->on('users')->onDelete('SET NULL');
+            $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained('id')->on('languages')->onDelete('SET NULL');
             $table->foreignId('course_id')->nullable()->constrained('id')->on('courses');
             $table->boolean('is_active')->default(true);
             $table->boolean('all_languages')->default(false);

@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(ContactType::class)->nullable()->constrained()->onDelete('SET NULL');
-            $table->text('contact');
+            $table->string('contact');
             $table->boolean('is_public')->default(true);
             $table->boolean('is_preferable')->default(true);
             $table->timestamps();

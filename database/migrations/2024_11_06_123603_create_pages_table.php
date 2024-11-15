@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('page_id')->nullable()->unsigned()->index();
-            $table->foreignIdFor(\App\Models\Language::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained('id')->on('languages')->onDelete('SET NULL');
             $table->string('title');
             $table->string('slug');
             $table->longText('content');

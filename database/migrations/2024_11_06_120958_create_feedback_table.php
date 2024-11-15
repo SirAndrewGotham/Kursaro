@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->longText('message');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('category_id')->unsigned()->default(0)->index();
-            $table->foreignIdFor(\App\Models\Language::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained('id')->on('languages')->onDelete('SET NULL');
             $table->string('name');
             $table->string('slug');
             $table->longText('description')->nullable();

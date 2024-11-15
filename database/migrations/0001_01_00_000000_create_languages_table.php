@@ -13,7 +13,20 @@ return new class extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
+            $table->boolean('default')->default(false);
+            $table->boolean('fallback')->default(false);
+            $table->string('code')->unique()->index();
+            $table->string('regional')->nullable();
+            $table->string('script')->nullable();
+            $table->string('dir')->nullable();
+            $table->string('flag')->nullable();
+            $table->string('name');
+            $table->string('english');
+            $table->string('slug')->unique()->index();
+            $table->boolean('available')->default(false);
+            $table->boolean('active')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

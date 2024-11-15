@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\BannerType::class)->nullable()->constrained()->onDelete('SET NULL');
+            $table->foreignIdFor(\App\Models\BannerType::class)->nullable()->constrained('id')->on('banner_types')->onDelete('SET NULL');
+            $table->foreignIdFor(\App\Models\BannerSpot::class)->nullable()->constrained('id')->on('banner_spots')->onDelete('SET NULL');
             $table->boolean('all_langauges')->default(false);
-            $table->boolean('active')->default(false);
+            $table->boolean('is_active')->default(false);
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
             $table->text('teaser')->nullable();
