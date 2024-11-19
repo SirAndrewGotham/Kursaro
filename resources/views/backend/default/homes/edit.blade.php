@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.home.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('back.home.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -11,7 +11,7 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="language_id">{{ trans('cruds.home.fields.language') }}</label>
+                <label for="language_id">{{ trans('back.home.fields.language') }}</label>
                 <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
                     @foreach($languages as $id => $entry)
                         <option value="{{ $id }}" {{ (old('language_id') ? old('language_id') : $home->language->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -22,27 +22,27 @@
                         {{ $errors->first('language') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.home.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.home.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="title">{{ trans('cruds.home.fields.title') }}</label>
+                <label for="title">{{ trans('back.home.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $home->title) }}">
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.home.fields.title_helper') }}</span>
+                <span class="help-block">{{ trans('back.home.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="content">{{ trans('cruds.home.fields.content') }}</label>
+                <label for="content">{{ trans('back.home.fields.content') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content', $home->content) !!}</textarea>
                 @if($errors->has('content'))
                     <div class="invalid-feedback">
                         {{ $errors->first('content') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.home.fields.content_helper') }}</span>
+                <span class="help-block">{{ trans('back.home.fields.content_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

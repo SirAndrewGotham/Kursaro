@@ -2,15 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', 'middleware' => ['auth:sanctum']], function () {
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'App\Http\Controllers\Api\V1\Backend', 'middleware' => ['auth:sanctum']], function () {
     // Permissions
-    Route::apiResource('permissions', 'PermissionsApiController');
+    Route::apiResource('permissions', 'PermissionApiController');
 
     // Roles
-    Route::apiResource('roles', 'RolesApiController');
+    Route::apiResource('roles', 'RoleApiController');
 
     // Users
-    Route::apiResource('users', 'UsersApiController');
+    Route::apiResource('users', 'UserApiController');
 
     // Language
     Route::apiResource('languages', 'LanguageApiController');
@@ -56,7 +56,4 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Contact
     Route::apiResource('contacts', 'ContactApiController');
-
-    // Course Feature
-    Route::apiResource('course-features', 'CourseFeatureApiController');
 });

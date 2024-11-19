@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('contact_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.contacts.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.contact.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.contact.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.contact.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.contact.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,19 +26,19 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.contact.fields.id') }}
+                        {{ trans('back.contact.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contact.fields.contact_type') }}
+                        {{ trans('back.contact.fields.contact_type') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contact.fields.contact') }}
+                        {{ trans('back.contact.fields.contact') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contact.fields.is_public') }}
+                        {{ trans('back.contact.fields.is_public') }}
                     </th>
                     <th>
-                        {{ trans('cruds.contact.fields.is_preferable') }}
+                        {{ trans('back.contact.fields.is_preferable') }}
                     </th>
                     <th>
                         &nbsp;

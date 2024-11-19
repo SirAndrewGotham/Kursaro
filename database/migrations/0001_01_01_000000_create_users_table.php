@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Language;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,13 +14,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained()->onDelete('SET NULL');
+            $table->foreignIdFor(Language::class)->nullable()->constrained()->onDelete('SET NULL');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('two_factor')->default(0)->nullable();
+            $table->string('two_factor_code')->nullable();
             $table->rememberToken();
+            $table->datetime('two_factor_expires_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('course_feature_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.course-features.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.courseFeature.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.courseFeature.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.courseFeature.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.courseFeature.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,13 +26,13 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.courseFeature.fields.id') }}
+                        {{ trans('back.courseFeature.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.courseFeature.fields.feature') }}
+                        {{ trans('back.courseFeature.fields.feature') }}
                     </th>
                     <th>
-                        {{ trans('cruds.courseFeature.fields.name') }}
+                        {{ trans('back.courseFeature.fields.name') }}
                     </th>
                     <th>
                         &nbsp;
@@ -124,7 +124,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

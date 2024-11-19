@@ -2,27 +2,50 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Banner;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Response;
 
 class UpdateBannerRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return Gate::allows('banner_edit');
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'banner_type_id' => [
+                'required',
+                'integer',
+            ],
+            'banner_spot_id' => [
+                'required',
+                'integer',
+            ],
+            'languages.*' => [
+                'integer',
+            ],
+            'languages' => [
+                'array',
+            ],
+            'is_active' => [
+                'required',
+            ],
+            'title' => [
+                'string',
+                'nullable',
+            ],
+            'subtitle' => [
+                'string',
+                'nullable',
+            ],
+            'path' => [
+                'string',
+                'nullable',
+            ],
         ];
     }
 }

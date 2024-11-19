@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('feedback_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.feedbacks.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.feedback.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.feedback.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.feedback.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.feedback.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,19 +26,19 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.feedback.fields.id') }}
+                        {{ trans('back.feedback.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.feedback.fields.user') }}
+                        {{ trans('back.feedback.fields.user') }}
                     </th>
                     <th>
-                        {{ trans('cruds.feedback.fields.name') }}
+                        {{ trans('back.feedback.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.feedback.fields.email') }}
+                        {{ trans('back.feedback.fields.email') }}
                     </th>
                     <th>
-                        {{ trans('cruds.feedback.fields.message') }}
+                        {{ trans('back.feedback.fields.message') }}
                     </th>
                     <th>
                         &nbsp;

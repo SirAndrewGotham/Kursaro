@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.banner.title') }}
+        {{ trans('global.show') }} {{ trans('back.banner.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.id') }}
+                            {{ trans('back.banner.fields.id') }}
                         </th>
                         <td>
                             {{ $banner->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.banner_type') }}
+                            {{ trans('back.banner.fields.banner_type') }}
                         </th>
                         <td>
                             {{ $banner->banner_type->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.banner_spot') }}
+                            {{ trans('back.banner.fields.banner_spot') }}
                         </th>
                         <td>
                             {{ $banner->banner_spot->name ?? '' }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.all_languages') }}
+                            {{ trans('back.banner.fields.all_languages') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $banner->all_languages ? 'checked' : '' }}>
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.language') }}
+                            {{ trans('back.banner.fields.language') }}
                         </th>
                         <td>
                             @foreach($banner->languages as $key => $language)
@@ -59,7 +59,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.is_active') }}
+                            {{ trans('back.banner.fields.is_active') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $banner->is_active ? 'checked' : '' }}>
@@ -67,7 +67,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.title') }}
+                            {{ trans('back.banner.fields.title') }}
                         </th>
                         <td>
                             {{ $banner->title }}
@@ -75,7 +75,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.subtitle') }}
+                            {{ trans('back.banner.fields.subtitle') }}
                         </th>
                         <td>
                             {{ $banner->subtitle }}
@@ -83,7 +83,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.teaser') }}
+                            {{ trans('back.banner.fields.teaser') }}
                         </th>
                         <td>
                             {!! $banner->teaser !!}
@@ -91,7 +91,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.path') }}
+                            {{ trans('back.banner.fields.path') }}
                         </th>
                         <td>
                             {{ $banner->path }}
@@ -99,7 +99,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.banner.fields.image') }}
+                            {{ trans('back.banner.fields.image') }}
                         </th>
                         <td>
                             @if($banner->image)

@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('home_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.homes.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.home.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.home.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.home.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.home.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,16 +26,16 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.home.fields.id') }}
+                        {{ trans('back.home.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.home.fields.language') }}
+                        {{ trans('back.home.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.name') }}
+                        {{ trans('back.language.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.home.fields.title') }}
+                        {{ trans('back.home.fields.title') }}
                     </th>
                     <th>
                         &nbsp;

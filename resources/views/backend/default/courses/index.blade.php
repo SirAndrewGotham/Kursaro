@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('course_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.courses.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.course.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.course.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.course.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.course.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,43 +26,43 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.id') }}
+                        {{ trans('back.course.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.course') }}
+                        {{ trans('back.course.fields.course') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.user') }}
+                        {{ trans('back.course.fields.user') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.language') }}
+                        {{ trans('back.course.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.name') }}
+                        {{ trans('back.language.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.name') }}
+                        {{ trans('back.course.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.image') }}
+                        {{ trans('back.course.fields.image') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.link') }}
+                        {{ trans('back.course.fields.link') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.is_active') }}
+                        {{ trans('back.course.fields.is_active') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.all_languages') }}
+                        {{ trans('back.course.fields.all_languages') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.views') }}
+                        {{ trans('back.course.fields.views') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.category') }}
+                        {{ trans('back.course.fields.category') }}
                     </th>
                     <th>
-                        {{ trans('cruds.course.fields.course_feature') }}
+                        {{ trans('back.course.fields.course_feature') }}
                     </th>
                     <th>
                         &nbsp;
@@ -210,7 +210,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

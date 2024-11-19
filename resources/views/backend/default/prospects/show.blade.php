@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.prospect.title') }}
+        {{ trans('global.show') }} {{ trans('back.prospect.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.id') }}
+                            {{ trans('back.prospect.fields.id') }}
                         </th>
                         <td>
                             {{ $prospect->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.course') }}
+                            {{ trans('back.prospect.fields.course') }}
                         </th>
                         <td>
                             {{ $prospect->course->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.user') }}
+                            {{ trans('back.prospect.fields.user') }}
                         </th>
                         <td>
                             {{ $prospect->user->name ?? '' }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.language') }}
+                            {{ trans('back.prospect.fields.language') }}
                         </th>
                         <td>
                             {{ $prospect->language->english ?? '' }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.name') }}
+                            {{ trans('back.prospect.fields.name') }}
                         </th>
                         <td>
                             {{ $prospect->name }}
@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.image') }}
+                            {{ trans('back.prospect.fields.image') }}
                         </th>
                         <td>
                             @if($prospect->image)
@@ -69,7 +69,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.description') }}
+                            {{ trans('back.prospect.fields.description') }}
                         </th>
                         <td>
                             {!! $prospect->description !!}
@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.link') }}
+                            {{ trans('back.prospect.fields.link') }}
                         </th>
                         <td>
                             {{ $prospect->link }}
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.is_active') }}
+                            {{ trans('back.prospect.fields.is_active') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $prospect->is_active ? 'checked' : '' }}>
@@ -93,7 +93,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.all_languages') }}
+                            {{ trans('back.prospect.fields.all_languages') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $prospect->all_languages ? 'checked' : '' }}>
@@ -101,7 +101,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.views') }}
+                            {{ trans('back.prospect.fields.views') }}
                         </th>
                         <td>
                             {{ $prospect->views }}
@@ -109,7 +109,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.prospect.fields.category') }}
+                            {{ trans('back.prospect.fields.category') }}
                         </th>
                         <td>
                             @foreach($prospect->categories as $key => $category)

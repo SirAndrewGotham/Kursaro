@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.course.title') }}
+        {{ trans('global.show') }} {{ trans('back.course.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.id') }}
+                            {{ trans('back.course.fields.id') }}
                         </th>
                         <td>
                             {{ $course->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.course') }}
+                            {{ trans('back.course.fields.course') }}
                         </th>
                         <td>
                             {{ $course->course->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.user') }}
+                            {{ trans('back.course.fields.user') }}
                         </th>
                         <td>
                             {{ $course->user->name ?? '' }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.language') }}
+                            {{ trans('back.course.fields.language') }}
                         </th>
                         <td>
                             {{ $course->language->english ?? '' }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.name') }}
+                            {{ trans('back.course.fields.name') }}
                         </th>
                         <td>
                             {{ $course->name }}
@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.image') }}
+                            {{ trans('back.course.fields.image') }}
                         </th>
                         <td>
                             @if($course->image)
@@ -69,7 +69,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.description') }}
+                            {{ trans('back.course.fields.description') }}
                         </th>
                         <td>
                             {!! $course->description !!}
@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.link') }}
+                            {{ trans('back.course.fields.link') }}
                         </th>
                         <td>
                             {{ $course->link }}
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.is_active') }}
+                            {{ trans('back.course.fields.is_active') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $course->is_active ? 'checked' : '' }}>
@@ -93,7 +93,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.all_languages') }}
+                            {{ trans('back.course.fields.all_languages') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $course->all_languages ? 'checked' : '' }}>
@@ -101,7 +101,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.views') }}
+                            {{ trans('back.course.fields.views') }}
                         </th>
                         <td>
                             {{ $course->views }}
@@ -109,7 +109,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.category') }}
+                            {{ trans('back.course.fields.category') }}
                         </th>
                         <td>
                             @foreach($course->categories as $key => $category)
@@ -119,7 +119,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.course_feature') }}
+                            {{ trans('back.course.fields.course_feature') }}
                         </th>
                         <td>
                             @foreach($course->course_features as $key => $course_feature)
@@ -145,12 +145,12 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#course_courses" role="tab" data-toggle="tab">
-                {{ trans('cruds.course.title') }}
+                {{ trans('back.course.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#course_prospects" role="tab" data-toggle="tab">
-                {{ trans('cruds.prospect.title') }}
+                {{ trans('back.prospect.title') }}
             </a>
         </li>
     </ul>

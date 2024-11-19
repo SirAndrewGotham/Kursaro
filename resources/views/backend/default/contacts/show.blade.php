@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.contact.title') }}
+        {{ trans('global.show') }} {{ trans('back.contact.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.id') }}
+                            {{ trans('back.contact.fields.id') }}
                         </th>
                         <td>
                             {{ $contact->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.contact_type') }}
+                            {{ trans('back.contact.fields.contact_type') }}
                         </th>
                         <td>
                             {{ $contact->contact_type->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.contact') }}
+                            {{ trans('back.contact.fields.contact') }}
                         </th>
                         <td>
                             {{ $contact->contact }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.is_public') }}
+                            {{ trans('back.contact.fields.is_public') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $contact->is_public ? 'checked' : '' }}>
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contact.fields.is_preferable') }}
+                            {{ trans('back.contact.fields.is_preferable') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $contact->is_preferable ? 'checked' : '' }}>

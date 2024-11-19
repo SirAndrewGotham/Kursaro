@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('permission_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.permissions.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.permission.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.permission.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.permission.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.permission.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,10 +26,10 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.permission.fields.id') }}
+                        {{ trans('back.permission.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.permission.fields.title') }}
+                        {{ trans('back.permission.fields.title') }}
                     </th>
                     <th>
                         &nbsp;

@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.page.title') }}
+        {{ trans('global.show') }} {{ trans('back.page.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.page.fields.id') }}
+                            {{ trans('back.page.fields.id') }}
                         </th>
                         <td>
                             {{ $page->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.page.fields.title') }}
+                            {{ trans('back.page.fields.title') }}
                         </th>
                         <td>
                             {{ $page->title }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.page.fields.content') }}
+                            {{ trans('back.page.fields.content') }}
                         </th>
                         <td>
                             {!! $page->content !!}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.page.fields.views') }}
+                            {{ trans('back.page.fields.views') }}
                         </th>
                         <td>
                             {{ $page->views }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.page.fields.page') }}
+                            {{ trans('back.page.fields.page') }}
                         </th>
                         <td>
                             {{ $page->page->title ?? '' }}
@@ -73,7 +73,7 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#page_pages" role="tab" data-toggle="tab">
-                {{ trans('cruds.page.title') }}
+                {{ trans('back.page.title') }}
             </a>
         </li>
     </ul>

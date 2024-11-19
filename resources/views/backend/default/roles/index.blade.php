@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('role_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.roles.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.role.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.role.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.role.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.role.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,13 +26,13 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.role.fields.id') }}
+                        {{ trans('back.role.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.role.fields.title') }}
+                        {{ trans('back.role.fields.title') }}
                     </th>
                     <th>
-                        {{ trans('cruds.role.fields.permissions') }}
+                        {{ trans('back.role.fields.permissions') }}
                     </th>
                     <th>
                         &nbsp;

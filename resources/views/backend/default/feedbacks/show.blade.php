@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.feedback.title') }}
+        {{ trans('global.show') }} {{ trans('back.feedback.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.feedback.fields.id') }}
+                            {{ trans('back.feedback.fields.id') }}
                         </th>
                         <td>
                             {{ $feedback->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.feedback.fields.user') }}
+                            {{ trans('back.feedback.fields.user') }}
                         </th>
                         <td>
                             {{ $feedback->user->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.feedback.fields.name') }}
+                            {{ trans('back.feedback.fields.name') }}
                         </th>
                         <td>
                             {{ $feedback->name }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.feedback.fields.email') }}
+                            {{ trans('back.feedback.fields.email') }}
                         </th>
                         <td>
                             {{ $feedback->email }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.feedback.fields.message') }}
+                            {{ trans('back.feedback.fields.message') }}
                         </th>
                         <td>
                             {{ $feedback->message }}

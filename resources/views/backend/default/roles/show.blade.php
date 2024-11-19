@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.role.title') }}
+        {{ trans('global.show') }} {{ trans('back.role.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.role.fields.id') }}
+                            {{ trans('back.role.fields.id') }}
                         </th>
                         <td>
                             {{ $role->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.role.fields.title') }}
+                            {{ trans('back.role.fields.title') }}
                         </th>
                         <td>
                             {{ $role->title }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.role.fields.permissions') }}
+                            {{ trans('back.role.fields.permissions') }}
                         </th>
                         <td>
                             @foreach($role->permissions as $key => $permissions)

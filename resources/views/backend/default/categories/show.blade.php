@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.category.title') }}
+        {{ trans('global.show') }} {{ trans('back.category.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.id') }}
+                            {{ trans('back.category.fields.id') }}
                         </th>
                         <td>
                             {{ $category->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.name') }}
+                            {{ trans('back.category.fields.name') }}
                         </th>
                         <td>
                             {{ $category->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.description') }}
+                            {{ trans('back.category.fields.description') }}
                         </th>
                         <td>
                             {!! $category->description !!}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.image') }}
+                            {{ trans('back.category.fields.image') }}
                         </th>
                         <td>
                             @if($category->image)
@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.language') }}
+                            {{ trans('back.category.fields.language') }}
                         </th>
                         <td>
                             {{ $category->language->english ?? '' }}
@@ -61,7 +61,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.category.fields.category') }}
+                            {{ trans('back.category.fields.category') }}
                         </th>
                         <td>
                             {{ $category->category->name ?? '' }}
@@ -85,17 +85,17 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#category_categories" role="tab" data-toggle="tab">
-                {{ trans('cruds.category.title') }}
+                {{ trans('back.category.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#category_courses" role="tab" data-toggle="tab">
-                {{ trans('cruds.course.title') }}
+                {{ trans('back.course.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#category_prospects" role="tab" data-toggle="tab">
-                {{ trans('cruds.prospect.title') }}
+                {{ trans('back.prospect.title') }}
             </a>
         </li>
     </ul>

@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.permission.title') }}
+        {{ trans('global.show') }} {{ trans('back.permission.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.permission.fields.id') }}
+                            {{ trans('back.permission.fields.id') }}
                         </th>
                         <td>
                             {{ $permission->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.permission.fields.title') }}
+                            {{ trans('back.permission.fields.title') }}
                         </th>
                         <td>
                             {{ $permission->title }}

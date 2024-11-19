@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('user_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.users.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.user.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.user.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.user.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,28 +26,28 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.id') }}
+                        {{ trans('back.user.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.name') }}
+                        {{ trans('back.user.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.email') }}
+                        {{ trans('back.user.fields.email') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.email_verified_at') }}
+                        {{ trans('back.user.fields.email_verified_at') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.two_factor') }}
+                        {{ trans('back.user.fields.two_factor') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.roles') }}
+                        {{ trans('back.user.fields.roles') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.language') }}
+                        {{ trans('back.user.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.name') }}
+                        {{ trans('back.language.fields.name') }}
                     </th>
                     <th>
                         &nbsp;

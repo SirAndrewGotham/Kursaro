@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.language.title') }}
+        {{ trans('global.show') }} {{ trans('back.language.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.id') }}
+                            {{ trans('back.language.fields.id') }}
                         </th>
                         <td>
                             {{ $language->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.default') }}
+                            {{ trans('back.language.fields.default') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $language->default ? 'checked' : '' }}>
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.fallback') }}
+                            {{ trans('back.language.fields.fallback') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $language->fallback ? 'checked' : '' }}>
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.code') }}
+                            {{ trans('back.language.fields.code') }}
                         </th>
                         <td>
                             {{ $language->code }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.regional') }}
+                            {{ trans('back.language.fields.regional') }}
                         </th>
                         <td>
                             {{ $language->regional }}
@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.script') }}
+                            {{ trans('back.language.fields.script') }}
                         </th>
                         <td>
                             {{ $language->script }}
@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.dir') }}
+                            {{ trans('back.language.fields.dir') }}
                         </th>
                         <td>
                             {{ $language->dir }}
@@ -73,7 +73,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.flag') }}
+                            {{ trans('back.language.fields.flag') }}
                         </th>
                         <td>
                             {{ $language->flag }}
@@ -81,7 +81,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.name') }}
+                            {{ trans('back.language.fields.name') }}
                         </th>
                         <td>
                             {{ $language->name }}
@@ -89,7 +89,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.english') }}
+                            {{ trans('back.language.fields.english') }}
                         </th>
                         <td>
                             {{ $language->english }}
@@ -97,7 +97,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.available') }}
+                            {{ trans('back.language.fields.available') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $language->available ? 'checked' : '' }}>
@@ -105,7 +105,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.language.fields.active') }}
+                            {{ trans('back.language.fields.active') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $language->active ? 'checked' : '' }}>
@@ -129,27 +129,27 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#language_homes" role="tab" data-toggle="tab">
-                {{ trans('cruds.home.title') }}
+                {{ trans('back.home.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#language_categories" role="tab" data-toggle="tab">
-                {{ trans('cruds.category.title') }}
+                {{ trans('back.category.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#language_courses" role="tab" data-toggle="tab">
-                {{ trans('cruds.course.title') }}
+                {{ trans('back.course.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#language_prospects" role="tab" data-toggle="tab">
-                {{ trans('cruds.prospect.title') }}
+                {{ trans('back.prospect.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#language_banners" role="tab" data-toggle="tab">
-                {{ trans('cruds.banner.title') }}
+                {{ trans('back.banner.title') }}
             </a>
         </li>
     </ul>

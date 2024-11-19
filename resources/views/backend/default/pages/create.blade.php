@@ -1,46 +1,46 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.page.title_singular') }}
+        {{ trans('global.create') }} {{ trans('back.page.title_singular') }}
     </div>
 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.pages.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="title">{{ trans('cruds.page.fields.title') }}</label>
+                <label for="title">{{ trans('back.page.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', '') }}">
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.page.fields.title_helper') }}</span>
+                <span class="help-block">{{ trans('back.page.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="content">{{ trans('cruds.page.fields.content') }}</label>
+                <label for="content">{{ trans('back.page.fields.content') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content') !!}</textarea>
                 @if($errors->has('content'))
                     <div class="invalid-feedback">
                         {{ $errors->first('content') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.page.fields.content_helper') }}</span>
+                <span class="help-block">{{ trans('back.page.fields.content_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="views">{{ trans('cruds.page.fields.views') }}</label>
+                <label for="views">{{ trans('back.page.fields.views') }}</label>
                 <input class="form-control {{ $errors->has('views') ? 'is-invalid' : '' }}" type="number" name="views" id="views" value="{{ old('views', '0') }}" step="1">
                 @if($errors->has('views'))
                     <div class="invalid-feedback">
                         {{ $errors->first('views') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.page.fields.views_helper') }}</span>
+                <span class="help-block">{{ trans('back.page.fields.views_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="page_id">{{ trans('cruds.page.fields.page') }}</label>
+                <label for="page_id">{{ trans('back.page.fields.page') }}</label>
                 <select class="form-control select2 {{ $errors->has('page') ? 'is-invalid' : '' }}" name="page_id" id="page_id">
                     @foreach($pages as $id => $entry)
                         <option value="{{ $id }}" {{ old('page_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -51,7 +51,7 @@
                         {{ $errors->first('page') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.page.fields.page_helper') }}</span>
+                <span class="help-block">{{ trans('back.page.fields.page_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

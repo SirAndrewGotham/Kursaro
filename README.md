@@ -2,6 +2,8 @@
 
 Kursaro estas informa projekto por prezenti ĝeneralajn informojn pri Esperanto (same kiel - eble - iu alia lingvo) kun informoj (ligiloj) pri lingvaj kursoj, kiujn ret-vizitantoj povas uzi por studi la lingvon.
 
+[Diskuto kaj informoj - ĉe la T-grupo "Retejo Esperanta"](https://t.me/retejoesperanta)
+
 ![Kursaro Homepage](docs/images/frontend-home.png)
 
 Karaj geamikoj.

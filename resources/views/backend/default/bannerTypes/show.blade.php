@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.bannerType.title') }}
+        {{ trans('global.show') }} {{ trans('back.bannerType.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerType.fields.id') }}
+                            {{ trans('back.bannerType.fields.id') }}
                         </th>
                         <td>
                             {{ $bannerType->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerType.fields.name') }}
+                            {{ trans('back.bannerType.fields.name') }}
                         </th>
                         <td>
                             {{ $bannerType->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerType.fields.description') }}
+                            {{ trans('back.bannerType.fields.description') }}
                         </th>
                         <td>
                             {!! $bannerType->description !!}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerType.fields.is_active') }}
+                            {{ trans('back.bannerType.fields.is_active') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $bannerType->is_active ? 'checked' : '' }}>
@@ -65,7 +65,7 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#banner_type_banners" role="tab" data-toggle="tab">
-                {{ trans('cruds.banner.title') }}
+                {{ trans('back.banner.title') }}
             </a>
         </li>
     </ul>

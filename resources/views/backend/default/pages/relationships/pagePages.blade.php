@@ -2,7 +2,7 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.pages.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.page.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.page.title_singular') }}
             </a>
         </div>
     </div>
@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.page.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.page.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -22,16 +22,16 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.id') }}
+                            {{ trans('back.page.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.title') }}
+                            {{ trans('back.page.fields.title') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.views') }}
+                            {{ trans('back.page.fields.views') }}
                         </th>
                         <th>
-                            {{ trans('cruds.page.fields.page') }}
+                            {{ trans('back.page.fields.page') }}
                         </th>
                         <th>
                             &nbsp;

@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('banner_spot_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.banner-spots.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.bannerSpot.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.bannerSpot.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.bannerSpot.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.bannerSpot.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,13 +26,13 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.bannerSpot.fields.id') }}
+                        {{ trans('back.bannerSpot.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.bannerSpot.fields.name') }}
+                        {{ trans('back.bannerSpot.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.bannerSpot.fields.size') }}
+                        {{ trans('back.bannerSpot.fields.size') }}
                     </th>
                     <th>
                         &nbsp;

@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.contactType.title') }}
+        {{ trans('global.show') }} {{ trans('back.contactType.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.contactType.fields.id') }}
+                            {{ trans('back.contactType.fields.id') }}
                         </th>
                         <td>
                             {{ $contactType->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contactType.fields.name') }}
+                            {{ trans('back.contactType.fields.name') }}
                         </th>
                         <td>
                             {{ $contactType->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.contactType.fields.description') }}
+                            {{ trans('back.contactType.fields.description') }}
                         </th>
                         <td>
                             {!! $contactType->description !!}

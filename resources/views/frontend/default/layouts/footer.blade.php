@@ -142,11 +142,11 @@
 
     <div class="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]">
         <div class="container">
-            <div class="flex flex-wrap -mx-4">
+            <div class="flex flex-wrap -mx-4 pb-4">
                 <div class="w-full px-4 md:w-2/3 lg:w-1/2">
                     <div class="my-1">
                         <div class="flex items-center justify-center -mx-3 md:justify-start">
-                            <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                            <a href="{{ route('page.show', 'privacy-policy') }}" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
                                 Privacy policy
                             </a>
                             <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">

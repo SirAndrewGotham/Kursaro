@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('language_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.languages.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.language.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.language.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.language.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.language.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,40 +26,40 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.id') }}
+                        {{ trans('back.language.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.default') }}
+                        {{ trans('back.language.fields.default') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.fallback') }}
+                        {{ trans('back.language.fields.fallback') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.code') }}
+                        {{ trans('back.language.fields.code') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.regional') }}
+                        {{ trans('back.language.fields.regional') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.script') }}
+                        {{ trans('back.language.fields.script') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.dir') }}
+                        {{ trans('back.language.fields.dir') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.flag') }}
+                        {{ trans('back.language.fields.flag') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.name') }}
+                        {{ trans('back.language.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.english') }}
+                        {{ trans('back.language.fields.english') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.available') }}
+                        {{ trans('back.language.fields.available') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.active') }}
+                        {{ trans('back.language.fields.active') }}
                     </th>
                     <th>
                         &nbsp;

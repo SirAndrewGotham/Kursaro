@@ -1,43 +1,43 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.bannerSpot.title_singular') }}
+        {{ trans('global.create') }} {{ trans('back.bannerSpot.title_singular') }}
     </div>
 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.banner-spots.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="name">{{ trans('cruds.bannerSpot.fields.name') }}</label>
+                <label class="required" for="name">{{ trans('back.bannerSpot.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', '') }}" required>
                 @if($errors->has('name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.bannerSpot.fields.name_helper') }}</span>
+                <span class="help-block">{{ trans('back.bannerSpot.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="description">{{ trans('cruds.bannerSpot.fields.description') }}</label>
+                <label for="description">{{ trans('back.bannerSpot.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))
                     <div class="invalid-feedback">
                         {{ $errors->first('description') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.bannerSpot.fields.description_helper') }}</span>
+                <span class="help-block">{{ trans('back.bannerSpot.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="size">{{ trans('cruds.bannerSpot.fields.size') }}</label>
+                <label for="size">{{ trans('back.bannerSpot.fields.size') }}</label>
                 <input class="form-control {{ $errors->has('size') ? 'is-invalid' : '' }}" type="text" name="size" id="size" value="{{ old('size', '') }}">
                 @if($errors->has('size'))
                     <div class="invalid-feedback">
                         {{ $errors->first('size') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.bannerSpot.fields.size_helper') }}</span>
+                <span class="help-block">{{ trans('back.bannerSpot.fields.size_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

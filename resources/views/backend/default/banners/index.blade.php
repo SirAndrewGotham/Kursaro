@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('banner_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.banners.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.banner.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.banner.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.banner.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.banner.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,40 +26,40 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.id') }}
+                        {{ trans('back.banner.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.banner_type') }}
+                        {{ trans('back.banner.fields.banner_type') }}
                     </th>
                     <th>
-                        {{ trans('cruds.bannerType.fields.is_active') }}
+                        {{ trans('back.bannerType.fields.is_active') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.banner_spot') }}
+                        {{ trans('back.banner.fields.banner_spot') }}
                     </th>
                     <th>
-                        {{ trans('cruds.bannerSpot.fields.size') }}
+                        {{ trans('back.bannerSpot.fields.size') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.all_languages') }}
+                        {{ trans('back.banner.fields.all_languages') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.language') }}
+                        {{ trans('back.banner.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.is_active') }}
+                        {{ trans('back.banner.fields.is_active') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.title') }}
+                        {{ trans('back.banner.fields.title') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.subtitle') }}
+                        {{ trans('back.banner.fields.subtitle') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.path') }}
+                        {{ trans('back.banner.fields.path') }}
                     </th>
                     <th>
-                        {{ trans('cruds.banner.fields.image') }}
+                        {{ trans('back.banner.fields.image') }}
                     </th>
                     <th>
                         &nbsp;

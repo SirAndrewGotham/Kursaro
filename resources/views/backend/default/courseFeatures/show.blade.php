@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.courseFeature.title') }}
+        {{ trans('global.show') }} {{ trans('back.courseFeature.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.courseFeature.fields.id') }}
+                            {{ trans('back.courseFeature.fields.id') }}
                         </th>
                         <td>
                             {{ $courseFeature->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.courseFeature.fields.feature') }}
+                            {{ trans('back.courseFeature.fields.feature') }}
                         </th>
                         <td>
                             {{ $courseFeature->feature->name ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.courseFeature.fields.name') }}
+                            {{ trans('back.courseFeature.fields.name') }}
                         </th>
                         <td>
                             {{ $courseFeature->name }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.courseFeature.fields.description') }}
+                            {{ trans('back.courseFeature.fields.description') }}
                         </th>
                         <td>
                             {{ $courseFeature->description }}
@@ -65,7 +65,7 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#feature_course_features" role="tab" data-toggle="tab">
-                {{ trans('cruds.courseFeature.title') }}
+                {{ trans('back.courseFeature.title') }}
             </a>
         </li>
     </ul>

@@ -2,7 +2,7 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.prospects.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.prospect.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.prospect.title_singular') }}
             </a>
         </div>
     </div>
@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.prospect.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.prospect.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -22,40 +22,40 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.id') }}
+                            {{ trans('back.prospect.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.course') }}
+                            {{ trans('back.prospect.fields.course') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.user') }}
+                            {{ trans('back.prospect.fields.user') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.language') }}
+                            {{ trans('back.prospect.fields.language') }}
                         </th>
                         <th>
-                            {{ trans('cruds.language.fields.name') }}
+                            {{ trans('back.language.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.name') }}
+                            {{ trans('back.prospect.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.image') }}
+                            {{ trans('back.prospect.fields.image') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.link') }}
+                            {{ trans('back.prospect.fields.link') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.is_active') }}
+                            {{ trans('back.prospect.fields.is_active') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.all_languages') }}
+                            {{ trans('back.prospect.fields.all_languages') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.views') }}
+                            {{ trans('back.prospect.fields.views') }}
                         </th>
                         <th>
-                            {{ trans('cruds.prospect.fields.category') }}
+                            {{ trans('back.prospect.fields.category') }}
                         </th>
                         <th>
                             &nbsp;
@@ -188,7 +188,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 })
 
 </script>

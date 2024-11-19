@@ -1,16 +1,16 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.prospect.title_singular') }}
+        {{ trans('global.create') }} {{ trans('back.prospect.title_singular') }}
     </div>
 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.prospects.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="course_id">{{ trans('cruds.prospect.fields.course') }}</label>
+                <label for="course_id">{{ trans('back.prospect.fields.course') }}</label>
                 <select class="form-control select2 {{ $errors->has('course') ? 'is-invalid' : '' }}" name="course_id" id="course_id">
                     @foreach($courses as $id => $entry)
                         <option value="{{ $id }}" {{ old('course_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -21,10 +21,10 @@
                         {{ $errors->first('course') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.course_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.course_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="user_id">{{ trans('cruds.prospect.fields.user') }}</label>
+                <label for="user_id">{{ trans('back.prospect.fields.user') }}</label>
                 <select class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id">
                     @foreach($users as $id => $entry)
                         <option value="{{ $id }}" {{ old('user_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -35,10 +35,10 @@
                         {{ $errors->first('user') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.user_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.user_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="language_id">{{ trans('cruds.prospect.fields.language') }}</label>
+                <label for="language_id">{{ trans('back.prospect.fields.language') }}</label>
                 <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
                     @foreach($languages as $id => $entry)
                         <option value="{{ $id }}" {{ old('language_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -49,20 +49,20 @@
                         {{ $errors->first('language') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="name">{{ trans('cruds.prospect.fields.name') }}</label>
+                <label class="required" for="name">{{ trans('back.prospect.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', '') }}" required>
                 @if($errors->has('name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.name_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="image">{{ trans('cruds.prospect.fields.image') }}</label>
+                <label for="image">{{ trans('back.prospect.fields.image') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
                 </div>
                 @if($errors->has('image'))
@@ -70,65 +70,65 @@
                         {{ $errors->first('image') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.image_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.image_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="description">{{ trans('cruds.prospect.fields.description') }}</label>
+                <label for="description">{{ trans('back.prospect.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))
                     <div class="invalid-feedback">
                         {{ $errors->first('description') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.description_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="link">{{ trans('cruds.prospect.fields.link') }}</label>
+                <label for="link">{{ trans('back.prospect.fields.link') }}</label>
                 <input class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" type="text" name="link" id="link" value="{{ old('link', '') }}">
                 @if($errors->has('link'))
                     <div class="invalid-feedback">
                         {{ $errors->first('link') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.link_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.link_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
                     <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" required {{ old('is_active', 0) == 1 ? 'checked' : '' }}>
-                    <label class="required form-check-label" for="is_active">{{ trans('cruds.prospect.fields.is_active') }}</label>
+                    <label class="required form-check-label" for="is_active">{{ trans('back.prospect.fields.is_active') }}</label>
                 </div>
                 @if($errors->has('is_active'))
                     <div class="invalid-feedback">
                         {{ $errors->first('is_active') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.is_active_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.is_active_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('all_languages') ? 'is-invalid' : '' }}">
                     <input type="hidden" name="all_languages" value="0">
                     <input class="form-check-input" type="checkbox" name="all_languages" id="all_languages" value="1" {{ old('all_languages', 0) == 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="all_languages">{{ trans('cruds.prospect.fields.all_languages') }}</label>
+                    <label class="form-check-label" for="all_languages">{{ trans('back.prospect.fields.all_languages') }}</label>
                 </div>
                 @if($errors->has('all_languages'))
                     <div class="invalid-feedback">
                         {{ $errors->first('all_languages') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.all_languages_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.all_languages_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="views">{{ trans('cruds.prospect.fields.views') }}</label>
+                <label for="views">{{ trans('back.prospect.fields.views') }}</label>
                 <input class="form-control {{ $errors->has('views') ? 'is-invalid' : '' }}" type="number" name="views" id="views" value="{{ old('views', '0') }}" step="1">
                 @if($errors->has('views'))
                     <div class="invalid-feedback">
                         {{ $errors->first('views') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.views_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.views_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="categories">{{ trans('cruds.prospect.fields.category') }}</label>
+                <label for="categories">{{ trans('back.prospect.fields.category') }}</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
@@ -143,7 +143,7 @@
                         {{ $errors->first('categories') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.prospect.fields.category_helper') }}</span>
+                <span class="help-block">{{ trans('back.prospect.fields.category_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

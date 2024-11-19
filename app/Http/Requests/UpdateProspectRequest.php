@@ -2,27 +2,49 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Prospect;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Response;
 
 class UpdateProspectRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return Gate::allows('prospect_edit');
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'name' => [
+                'string',
+                'min:2',
+                'max:255',
+                'required',
+            ],
+            'description' => [
+                'required',
+            ],
+            'link' => [
+                'string',
+                'nullable',
+            ],
+            'is_active' => [
+                'required',
+            ],
+            'views' => [
+                'nullable',
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+            ],
+            'categories.*' => [
+                'integer',
+            ],
+            'categories' => [
+                'array',
+            ],
         ];
     }
 }

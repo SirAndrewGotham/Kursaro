@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 @can('category_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.categories.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.category.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.category.title_singular') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -15,7 +15,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.category.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.category.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -26,22 +26,22 @@
 
                     </th>
                     <th>
-                        {{ trans('cruds.category.fields.id') }}
+                        {{ trans('back.category.fields.id') }}
                     </th>
                     <th>
-                        {{ trans('cruds.category.fields.name') }}
+                        {{ trans('back.category.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.category.fields.image') }}
+                        {{ trans('back.category.fields.image') }}
                     </th>
                     <th>
-                        {{ trans('cruds.category.fields.language') }}
+                        {{ trans('back.category.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('cruds.language.fields.name') }}
+                        {{ trans('back.language.fields.name') }}
                     </th>
                     <th>
-                        {{ trans('cruds.category.fields.category') }}
+                        {{ trans('back.category.fields.category') }}
                     </th>
                     <th>
                         &nbsp;

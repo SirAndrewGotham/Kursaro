@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.course.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('back.course.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -11,7 +11,7 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="course_id">{{ trans('cruds.course.fields.course') }}</label>
+                <label for="course_id">{{ trans('back.course.fields.course') }}</label>
                 <select class="form-control select2 {{ $errors->has('course') ? 'is-invalid' : '' }}" name="course_id" id="course_id">
                     @foreach($courses as $id => $entry)
                         <option value="{{ $id }}" {{ (old('course_id') ? old('course_id') : $course->course->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -22,10 +22,10 @@
                         {{ $errors->first('course') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.course_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.course_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="user_id">{{ trans('cruds.course.fields.user') }}</label>
+                <label for="user_id">{{ trans('back.course.fields.user') }}</label>
                 <select class="form-control select2 {{ $errors->has('user') ? 'is-invalid' : '' }}" name="user_id" id="user_id">
                     @foreach($users as $id => $entry)
                         <option value="{{ $id }}" {{ (old('user_id') ? old('user_id') : $course->user->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -36,10 +36,10 @@
                         {{ $errors->first('user') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.user_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.user_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="language_id">{{ trans('cruds.course.fields.language') }}</label>
+                <label for="language_id">{{ trans('back.course.fields.language') }}</label>
                 <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
                     @foreach($languages as $id => $entry)
                         <option value="{{ $id }}" {{ (old('language_id') ? old('language_id') : $course->language->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -50,20 +50,20 @@
                         {{ $errors->first('language') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="name">{{ trans('cruds.course.fields.name') }}</label>
+                <label class="required" for="name">{{ trans('back.course.fields.name') }}</label>
                 <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $course->name) }}" required>
                 @if($errors->has('name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.name_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.name_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="image">{{ trans('cruds.course.fields.image') }}</label>
+                <label for="image">{{ trans('back.course.fields.image') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
                 </div>
                 @if($errors->has('image'))
@@ -71,65 +71,65 @@
                         {{ $errors->first('image') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.image_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.image_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="description">{{ trans('cruds.course.fields.description') }}</label>
+                <label for="description">{{ trans('back.course.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $course->description) !!}</textarea>
                 @if($errors->has('description'))
                     <div class="invalid-feedback">
                         {{ $errors->first('description') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.description_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="link">{{ trans('cruds.course.fields.link') }}</label>
+                <label for="link">{{ trans('back.course.fields.link') }}</label>
                 <input class="form-control {{ $errors->has('link') ? 'is-invalid' : '' }}" type="text" name="link" id="link" value="{{ old('link', $course->link) }}">
                 @if($errors->has('link'))
                     <div class="invalid-feedback">
                         {{ $errors->first('link') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.link_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.link_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
                     <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $course->is_active || old('is_active', 0) === 1 ? 'checked' : '' }} required>
-                    <label class="required form-check-label" for="is_active">{{ trans('cruds.course.fields.is_active') }}</label>
+                    <label class="required form-check-label" for="is_active">{{ trans('back.course.fields.is_active') }}</label>
                 </div>
                 @if($errors->has('is_active'))
                     <div class="invalid-feedback">
                         {{ $errors->first('is_active') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.is_active_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.is_active_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('all_languages') ? 'is-invalid' : '' }}">
                     <input type="hidden" name="all_languages" value="0">
                     <input class="form-check-input" type="checkbox" name="all_languages" id="all_languages" value="1" {{ $course->all_languages || old('all_languages', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="all_languages">{{ trans('cruds.course.fields.all_languages') }}</label>
+                    <label class="form-check-label" for="all_languages">{{ trans('back.course.fields.all_languages') }}</label>
                 </div>
                 @if($errors->has('all_languages'))
                     <div class="invalid-feedback">
                         {{ $errors->first('all_languages') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.all_languages_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.all_languages_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="views">{{ trans('cruds.course.fields.views') }}</label>
+                <label for="views">{{ trans('back.course.fields.views') }}</label>
                 <input class="form-control {{ $errors->has('views') ? 'is-invalid' : '' }}" type="number" name="views" id="views" value="{{ old('views', $course->views) }}" step="1">
                 @if($errors->has('views'))
                     <div class="invalid-feedback">
                         {{ $errors->first('views') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.views_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.views_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="categories">{{ trans('cruds.course.fields.category') }}</label>
+                <label for="categories">{{ trans('back.course.fields.category') }}</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
@@ -144,10 +144,10 @@
                         {{ $errors->first('categories') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.category_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.category_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="course_features">{{ trans('cruds.course.fields.course_feature') }}</label>
+                <label for="course_features">{{ trans('back.course.fields.course_feature') }}</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
@@ -162,7 +162,7 @@
                         {{ $errors->first('course_features') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.course.fields.course_feature_helper') }}</span>
+                <span class="help-block">{{ trans('back.course.fields.course_feature_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

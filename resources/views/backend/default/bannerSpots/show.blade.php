@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.bannerSpot.title') }}
+        {{ trans('global.show') }} {{ trans('back.bannerSpot.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerSpot.fields.id') }}
+                            {{ trans('back.bannerSpot.fields.id') }}
                         </th>
                         <td>
                             {{ $bannerSpot->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerSpot.fields.name') }}
+                            {{ trans('back.bannerSpot.fields.name') }}
                         </th>
                         <td>
                             {{ $bannerSpot->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerSpot.fields.description') }}
+                            {{ trans('back.bannerSpot.fields.description') }}
                         </th>
                         <td>
                             {!! $bannerSpot->description !!}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.bannerSpot.fields.size') }}
+                            {{ trans('back.bannerSpot.fields.size') }}
                         </th>
                         <td>
                             {{ $bannerSpot->size }}
@@ -65,7 +65,7 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#banner_spot_banners" role="tab" data-toggle="tab">
-                {{ trans('cruds.banner.title') }}
+                {{ trans('back.banner.title') }}
             </a>
         </li>
     </ul>

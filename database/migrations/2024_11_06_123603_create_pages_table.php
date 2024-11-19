@@ -16,7 +16,7 @@ return new class extends Migration
             $table->bigInteger('page_id')->nullable()->unsigned()->index();
             $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained('id')->on('languages')->onDelete('SET NULL');
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->longText('content');
             $table->bigInteger('views')->default(0);
             $table->timestamps();

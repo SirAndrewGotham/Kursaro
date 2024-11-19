@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.banner.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('back.banner.title_singular') }}
     </div>
 
     <div class="card-body">
@@ -11,7 +11,7 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label class="required" for="banner_type_id">{{ trans('cruds.banner.fields.banner_type') }}</label>
+                <label class="required" for="banner_type_id">{{ trans('back.banner.fields.banner_type') }}</label>
                 <select class="form-control select2 {{ $errors->has('banner_type') ? 'is-invalid' : '' }}" name="banner_type_id" id="banner_type_id" required>
                     @foreach($banner_types as $id => $entry)
                         <option value="{{ $id }}" {{ (old('banner_type_id') ? old('banner_type_id') : $banner->banner_type->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -22,10 +22,10 @@
                         {{ $errors->first('banner_type') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.banner_type_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.banner_type_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="banner_spot_id">{{ trans('cruds.banner.fields.banner_spot') }}</label>
+                <label class="required" for="banner_spot_id">{{ trans('back.banner.fields.banner_spot') }}</label>
                 <select class="form-control select2 {{ $errors->has('banner_spot') ? 'is-invalid' : '' }}" name="banner_spot_id" id="banner_spot_id" required>
                     @foreach($banner_spots as $id => $entry)
                         <option value="{{ $id }}" {{ (old('banner_spot_id') ? old('banner_spot_id') : $banner->banner_spot->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -36,23 +36,23 @@
                         {{ $errors->first('banner_spot') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.banner_spot_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.banner_spot_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('all_languages') ? 'is-invalid' : '' }}">
                     <input type="hidden" name="all_languages" value="0">
                     <input class="form-check-input" type="checkbox" name="all_languages" id="all_languages" value="1" {{ $banner->all_languages || old('all_languages', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="all_languages">{{ trans('cruds.banner.fields.all_languages') }}</label>
+                    <label class="form-check-label" for="all_languages">{{ trans('back.banner.fields.all_languages') }}</label>
                 </div>
                 @if($errors->has('all_languages'))
                     <div class="invalid-feedback">
                         {{ $errors->first('all_languages') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.all_languages_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.all_languages_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="languages">{{ trans('cruds.banner.fields.language') }}</label>
+                <label for="languages">{{ trans('back.banner.fields.language') }}</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
@@ -67,62 +67,62 @@
                         {{ $errors->first('languages') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
                     <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $banner->is_active || old('is_active', 0) === 1 ? 'checked' : '' }} required>
-                    <label class="required form-check-label" for="is_active">{{ trans('cruds.banner.fields.is_active') }}</label>
+                    <label class="required form-check-label" for="is_active">{{ trans('back.banner.fields.is_active') }}</label>
                 </div>
                 @if($errors->has('is_active'))
                     <div class="invalid-feedback">
                         {{ $errors->first('is_active') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.is_active_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.is_active_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="title">{{ trans('cruds.banner.fields.title') }}</label>
+                <label for="title">{{ trans('back.banner.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $banner->title) }}">
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.title_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.title_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="subtitle">{{ trans('cruds.banner.fields.subtitle') }}</label>
+                <label for="subtitle">{{ trans('back.banner.fields.subtitle') }}</label>
                 <input class="form-control {{ $errors->has('subtitle') ? 'is-invalid' : '' }}" type="text" name="subtitle" id="subtitle" value="{{ old('subtitle', $banner->subtitle) }}">
                 @if($errors->has('subtitle'))
                     <div class="invalid-feedback">
                         {{ $errors->first('subtitle') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.subtitle_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.subtitle_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="teaser">{{ trans('cruds.banner.fields.teaser') }}</label>
+                <label for="teaser">{{ trans('back.banner.fields.teaser') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('teaser') ? 'is-invalid' : '' }}" name="teaser" id="teaser">{!! old('teaser', $banner->teaser) !!}</textarea>
                 @if($errors->has('teaser'))
                     <div class="invalid-feedback">
                         {{ $errors->first('teaser') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.teaser_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.teaser_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="path">{{ trans('cruds.banner.fields.path') }}</label>
+                <label for="path">{{ trans('back.banner.fields.path') }}</label>
                 <input class="form-control {{ $errors->has('path') ? 'is-invalid' : '' }}" type="text" name="path" id="path" value="{{ old('path', $banner->path) }}">
                 @if($errors->has('path'))
                     <div class="invalid-feedback">
                         {{ $errors->first('path') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.path_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.path_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="image">{{ trans('cruds.banner.fields.image') }}</label>
+                <label for="image">{{ trans('back.banner.fields.image') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('image') ? 'is-invalid' : '' }}" id="image-dropzone">
                 </div>
                 @if($errors->has('image'))
@@ -130,7 +130,7 @@
                         {{ $errors->first('image') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.banner.fields.image_helper') }}</span>
+                <span class="help-block">{{ trans('back.banner.fields.image_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

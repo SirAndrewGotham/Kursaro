@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.home.title') }}
+        {{ trans('global.show') }} {{ trans('back.home.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.home.fields.id') }}
+                            {{ trans('back.home.fields.id') }}
                         </th>
                         <td>
                             {{ $home->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.home.fields.language') }}
+                            {{ trans('back.home.fields.language') }}
                         </th>
                         <td>
                             {{ $home->language->english ?? '' }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.home.fields.title') }}
+                            {{ trans('back.home.fields.title') }}
                         </th>
                         <td>
                             {{ $home->title }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.home.fields.content') }}
+                            {{ trans('back.home.fields.content') }}
                         </th>
                         <td>
                             {!! $home->content !!}

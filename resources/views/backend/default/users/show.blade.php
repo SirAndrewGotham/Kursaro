@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+@extends('backend.default.layouts.app')
 @section('content')
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.user.title') }}
+        {{ trans('global.show') }} {{ trans('back.user.title') }}
     </div>
 
     <div class="card-body">
@@ -17,7 +17,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.id') }}
+                            {{ trans('back.user.fields.id') }}
                         </th>
                         <td>
                             {{ $user->id }}
@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.name') }}
+                            {{ trans('back.user.fields.name') }}
                         </th>
                         <td>
                             {{ $user->name }}
@@ -33,7 +33,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email') }}
+                            {{ trans('back.user.fields.email') }}
                         </th>
                         <td>
                             {{ $user->email }}
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email_verified_at') }}
+                            {{ trans('back.user.fields.email_verified_at') }}
                         </th>
                         <td>
                             {{ $user->email_verified_at }}
@@ -49,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.two_factor') }}
+                            {{ trans('back.user.fields.two_factor') }}
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $user->two_factor ? 'checked' : '' }}>
@@ -57,7 +57,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.roles') }}
+                            {{ trans('back.user.fields.roles') }}
                         </th>
                         <td>
                             @foreach($user->roles as $key => $roles)
@@ -67,7 +67,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.language') }}
+                            {{ trans('back.user.fields.language') }}
                         </th>
                         <td>
                             {{ $user->language->english ?? '' }}
@@ -91,17 +91,17 @@
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
             <a class="nav-link" href="#user_courses" role="tab" data-toggle="tab">
-                {{ trans('cruds.course.title') }}
+                {{ trans('back.course.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#user_feedbacks" role="tab" data-toggle="tab">
-                {{ trans('cruds.feedback.title') }}
+                {{ trans('back.feedback.title') }}
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#user_prospects" role="tab" data-toggle="tab">
-                {{ trans('cruds.prospect.title') }}
+                {{ trans('back.prospect.title') }}
             </a>
         </li>
     </ul>

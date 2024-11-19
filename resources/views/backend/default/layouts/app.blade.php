@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -8,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ trans('panel.site_title') }}</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+{{--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />--}}
+    <link href="{{ asset('assets/backend/default/bootstrap/4.1.3/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -21,46 +21,38 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" rel="stylesheet" />
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/backend/default/css/custom.css') }}" rel="stylesheet" />
     @yield('styles')
 </head>
 
-<body class="c-app">
+<body class="c-app">12345
 @include('backend.default.layouts.menu')
 <div class="c-wrapper">
     <header class="c-header c-header-fixed px-3">
         <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
             <i class="fas fa-fw fa-bars"></i>
         </button>
-
         <a class="c-header-brand d-lg-none" href="#">{{ trans('panel.site_title') }}</a>
-
         <button class="c-header-toggler mfs-3 d-md-down-none" type="button" responsive="true">
             <i class="fas fa-fw fa-bars"></i>
         </button>
-
         <ul class="c-header-nav ml-auto">
-            @if(count(config('panel.available_languages', [])) > 1)
+            @if(count(config('backend.available_languages', [])) > 1)
                 <li class="c-header-nav-item dropdown d-md-down-none">
                     <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         {{ strtoupper(app()->getLocale()) }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        @foreach(config('panel.available_languages') as $langLocale => $langName)
+                        @foreach(config('backend.available_languages') as $langLocale => $langName)
                             <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
                         @endforeach
                     </div>
                 </li>
             @endif
-
-
         </ul>
     </header>
-
     <div class="c-body">
         <main class="c-main">
-
-
             <div class="container-fluid">
                 @if(session('message'))
                     <div class="row mb-2">
@@ -110,7 +102,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('assets/backend/default/js/main.js') }}"></script>
 <script>
     $(function() {
         let copyButtonTrans = '{{ trans('global.datatables.copy') }}'

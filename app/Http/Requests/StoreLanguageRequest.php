@@ -2,27 +2,58 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Language;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Response;
 
 class StoreLanguageRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
+    public function authorize()
     {
-        return false;
+        return Gate::allows('language_create');
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
+    public function rules()
     {
         return [
-            //
+            'default' => [
+                'required',
+            ],
+            'code' => [
+                'string',
+                'min:2',
+                'max:12',
+                'required',
+            ],
+            'regional' => [
+                'string',
+                'nullable',
+            ],
+            'script' => [
+                'string',
+                'nullable',
+            ],
+            'dir' => [
+                'string',
+                'nullable',
+            ],
+            'flag' => [
+                'string',
+                'nullable',
+            ],
+            'name' => [
+                'string',
+                'min:2',
+                'max:255',
+                'nullable',
+            ],
+            'english' => [
+                'string',
+                'min:2',
+                'max:255',
+                'nullable',
+            ],
         ];
     }
 }
