@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('english');
             $table->string('slug')->unique()->index();
-            $table->boolean('available')->default(false);
-            $table->boolean('active')->default(false);
+            $table->boolean('is_available')->default(false);
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

@@ -70,11 +70,12 @@
                 </svg>
               </span>
                     </label>
-                    <div class="hidden sm:flex">
-                        <a href="{{ route('login') }}"
-                           class="loginBtn py-2 px-[22px] text-base font-medium text-dark dark:text-white hover:opacity-70">
-                            [ Language switcher ]
-                        </a>
+                    <div class="hidden sm:flex px-4">
+                        @include('frontend.default.layouts.languageSwitcher')
+{{--                        <a href="{{ route('login') }}"--}}
+{{--                           class="loginBtn py-2 px-[22px] text-base font-medium text-dark dark:text-white hover:opacity-70">--}}
+{{--                            [ Language switcher ]--}}
+{{--                        </a>--}}
                         {{--                        <a href="{{ route('login') }}" class="loginBtn py-2 px-[22px] text-base font-medium text-dark dark:text-white hover:opacity-70">--}}
                         {{--                            Sign In--}}
                         {{--                        </a>--}}

@@ -17,5 +17,9 @@ export default {
         },
     },
 
+    // variants: {
+    //     display: ["group-hover"]
+    // },
+
     plugins: [forms],
 };
