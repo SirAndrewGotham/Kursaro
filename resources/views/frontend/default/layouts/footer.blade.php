@@ -4,12 +4,12 @@
         <div class="flex flex-wrap -mx-4">
             <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
                 <div class="w-full mb-10">
-                    <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
-                        <span class="text-blue-700">Site logo here</span>
+                    <a href="{{ route('home') }}" class="mb-6 inline-block max-w-[160px]">
+                        <span class="text-blue-700">{{ __('Site logo here') }}</span>
 {{--                        <img src="javascript:void(0)" alt="logo" class="max-w-full">--}}
                     </a>
                     <p class="mb-8 max-w-[270px] text-base text-gray-7">
-                        We speak Esperanto,<br /><strong>AND YOU CAN TOO!</strong>
+                        {{ __('We speak Esperanto,') }}<br /><strong>{{ __('AND YOU CAN TOO!') }}</strong>
                     </p>
                     <div class="flex items-center -mx-3">
                         <a href="https://www.facebook.com/profile.php?id=61568360775675" target="_blank" class="px-3 text-gray-7 hover:text-white">
@@ -39,26 +39,26 @@
             </div>
             <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
                 <div class="w-full mb-10">
-                    <h4 class="text-lg font-semibold text-white mb-9">About Us</h4>
+                    <h4 class="text-lg font-semibold text-white mb-9">{{ __('About Us') }}</h4>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Home
+                            <a href="{{ route('home') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                                {{ __('Home') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Features
+                                {{ __('Features') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                About
+                                {{ __('About Us') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Testimonial
+                                {{ __('Testimonials') }}
                             </a>
                         </li>
                     </ul>
@@ -66,26 +66,26 @@
             </div>
             <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
                 <div class="w-full mb-10">
-                    <h4 class="text-lg font-semibold text-white mb-9">Features</h4>
+                    <h4 class="text-lg font-semibold text-white mb-9">{{ __('Features') }}</h4>
                     <ul>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                How it works
+                                {{ __('How it works') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Privacy policy
+                                {{ __('Privacy policy') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Terms of Service
+                                {{ __('Terms of Service') }}
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                                Legal Notice
+                                {{ __('Legal Notice') }}
                             </a>
                         </li>
                     </ul>
@@ -93,14 +93,14 @@
             </div>
             <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
                 <div class="w-full mb-10">
-                    <h4 class="text-lg font-semibold text-white mb-9">Visit:</h4>
+                    <h4 class="text-lg font-semibold text-white mb-9">{{ __('Visit') }}:</h4>
                     <div class="flex flex-col gap-8">
                         <a href="https://legalerno.esperantejo.com" class="group flex items-center gap-[22px]">
                             <div class="overflow-hidden rounded">
                                 <img class="max-w-[64px] h-auto" src="{{ asset('assets/frontend/images/blog/blog-01.jpg') }}" alt="Legalerno" />
                             </div>
                             <span class="max-w-[180px] text-gray-7 text-base group-hover:text-white">
-                                Learn Esperanto by reading
+                                {{ __('Learn Esperanto by reading') }}
                             </span>
                         </a>
                         <a href="https://fotoj.esperantejo.com" class="group flex items-center gap-[22px]">
@@ -108,7 +108,7 @@
                                 <img class="max-w-[64px] h-auto" src="{{ asset('assets/frontend/images/blog/blog-02.jpg') }}" alt="FotoEsperanta">
                             </div>
                             <span class="max-w-[180px] text-gray-7 text-base group-hover:text-white">
-                            Esperanto Photography
+                            {{ __('Esperanto Photography') }}
                 </span>
                         </a>
                     </div>
@@ -147,13 +147,13 @@
                     <div class="my-1">
                         <div class="flex items-center justify-center -mx-3 md:justify-start">
                             <a href="{{ route('page.show', 'privacy-policy') }}" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
-                                Privacy policy
+                                {{ __('Privacy policy') }}
                             </a>
                             <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
-                                Legal notice
+                                {{ __('Legal Notice') }}
                             </a>
                             <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
-                                Terms of service
+                                {{ __('Terms of Service') }}
                             </a>
                         </div>
                     </div>
@@ -161,11 +161,11 @@
                 <div class="w-full px-4 md:w-1/3 lg:w-1/2">
                     <div class="flex justify-center my-1 md:justify-end">
                         <p class="text-base text-gray-7">
-                            Developed by
+                            {{ __('Developed by') }}
                             <a href="https://t.me/sirandrewgotham" rel="nofollow noopner" target="_blank" class="text-gray-1 hover:underline">
                             Andrew Gotham
                             </a>
-                            for
+                            {{ __('for') }}
                             <a href="https://esperantejo.com" rel="nofollow noopner" target="_blank" class="text-gray-1 hover:underline">
                                 Esperantejo.com
                             </a>
