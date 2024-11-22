@@ -162,9 +162,9 @@
                     <div class="flex justify-center my-1 md:justify-end">
                         <p class="text-base text-gray-7">
                             Developed by
-                            {{--                            <a href="https://biblioteko.esperantejo.com" rel="nofollow noopner" target="_blank" class="text-gray-1 hover:underline">--}}
+                            <a href="https://t.me/sirandrewgotham" rel="nofollow noopner" target="_blank" class="text-gray-1 hover:underline">
                             Andrew Gotham
-                            {{--                            </a>--}}
+                            </a>
                             for
                             <a href="https://esperantejo.com" rel="nofollow noopner" target="_blank" class="text-gray-1 hover:underline">
                                 Esperantejo.com

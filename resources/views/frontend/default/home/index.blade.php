@@ -2,7 +2,8 @@
     <section class="pt-10 pb-10 lg:pt-10 lg:pb-20 dark:bg-dark">
         <div class="container">
             <span class="mb-4 text-xl text-dark dark:text-white hover:text-primary dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
-                We invite you to learn our language.
+{{--                We invite you to learn our language.--}}
+                {{ $content }}
             </span>
 {{--            <div class="flex flex-wrap -mx-4">--}}
 {{--                <div class="w-full px-4 md:w-1/2 lg:w-1/3">--}}

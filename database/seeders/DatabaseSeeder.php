@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             RoleUserSeeder::class,
             PageSeeder::class,
+            HomeSeeder::class,
         ]);
     }
 }
