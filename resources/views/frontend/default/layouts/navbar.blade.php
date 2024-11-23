@@ -1,14 +1,13 @@
-<!-- ====== Navbar Section Start -->
+{{-- ====== Navbar Section Start --}}
 <div class="absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header sticky">
     <div class="container">
         <div class="relative flex items-center justify-between -mx-4">
             {{-- Logo --}}
             <div class="max-w-full px-4 w-60">
                 <a href="{{ route('home') }}" class="block w-full py-5 navbar-logo">
-                    <span
-                        class="py-2 px-[22px] text-base font-medium text-dark dark:text-white hover:opacity-70">Home</span>
-                    {{--                    <img src="{{ asset('assets/frontend/images/logo/logo.svg') }}" alt="logo" class="w-full dark:hidden">--}}
-                    {{--                    <img src="{{ asset('assets/frontend/images/logo/logo-white.svg') }}" alt="logo" class="hidden w-full dark:block">--}}
+                    <svg width="64px" height="64px">
+                    {!! file_get_contents(public_path('assets/images/site_logo.svg')) !!}
+                    </svg>
                 </a>
             </div>
             {{--// Logo --}}
@@ -89,4 +88,4 @@
         </div>
     </div>
 </div>
-<!-- ====== Navbar Section End -->
+{{-- ====== Navbar Section End --}}
