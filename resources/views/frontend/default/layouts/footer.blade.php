@@ -5,8 +5,8 @@
             <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
                 <div class="w-full mb-10">
                     <a href="{{ route('home') }}" class="mb-6 inline-block max-w-[160px]">
-                        <span class="text-blue-700">{{ __('Site logo here') }}</span>
-{{--                        <img src="javascript:void(0)" alt="logo" class="max-w-full">--}}
+{{--                        {!! file_get_contents(public_path('assets/images/site_logo.svg')) !!}--}}
+                        <img src="{{ asset('assets/images/site_logo.svg') }}" alt="Kursaro Site Logo Icon" class="w-full">
                     </a>
                     <p class="mb-8 max-w-[270px] text-base text-gray-7">
                         {{ __('We speak Esperanto,') }}<br /><strong>{{ __('AND YOU CAN TOO!') }}</strong>
@@ -178,11 +178,11 @@
 
     <div>
       <span class="absolute left-0 top-0 z-[-1]">
-        <img src="assets/images/footer/shape-1.svg" alt="">
+          {!! file_get_contents(public_path('assets/frontend/images/footer/shape-1.svg')) !!}
       </span>
 
         <span class="absolute bottom-0 right-0 z-[-1]">
-        <img src="assets/images/footer/shape-3.svg" alt="">
+            {!! file_get_contents(public_path('assets/frontend/images/footer/shape-3.svg')) !!}
       </span>
 
         <span class="absolute top-0 right-0 z-[-1]">
