@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('homes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('home_id')->nullable()->constrained('id')->on('homes')->onDelete('SET NULL');
+            $table->boolean('is_default')->default(false);
             $table->foreignIdFor(\App\Models\Language::class)->constrained('id')->on('languages')->cascadeOnDelete();
             $table->string('title')->nullable();
             $table->longText('content');

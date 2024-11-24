@@ -17,7 +17,7 @@ class HomeSeeder extends Seeder
         $content = [
             [
                 'id' => 1,
-                'home_id' => null,
+                'is_default' => true,
                 'language_id' => 37,
                 'title' => 'Learn Esperanto',
                 'content' => 'We invite you to learn our language.',
@@ -27,7 +27,7 @@ class HomeSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'home_id' => 1,
+                'is_default' => false,
                 'language_id' => 42,
                 'title' => 'Lernu Esperanton',
                 'content' => 'Ni invitas vin lerni nian lingvon.',
