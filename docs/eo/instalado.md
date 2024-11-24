@@ -15,10 +15,11 @@ Por la sistemo prenita de [Github](https://github.com/sirandrewgotham/kursaro), 
 5. Kopiu dosieron .env.example en la dosieron .env
 6. Ekzekutu comandon `php artisan key:generate`
 7. Ekzekutu komandon `php artisan migrate --seed`
-8. En la dosiero .env indiku veran retan adreson de la sistemo en la linio `APP_URL=`
+8. Ekzekutu komandon `php artisan storage:link` por krei dosieruje kien grafikaĵoj estos koservataj (tiu estas /storage/app/public).
+9. En la dosiero .env indiku veran retan adreson de la sistemo en la linio `APP_URL=`
 
 Se vi intendas uzi databazon alian ol SQLite, bv. certigi, ke vi havas taŭgan databazan servilon.
 
-Por uzi alian databazon, bv. shanĝi informojn pri la uzata databazo en la dosiero .env post la paŝo 5 supre, kaj sekvu ekzekutante paŝojn 6-8 poste.
+Por uzi alian databazon, bv. shanĝi informojn pri la uzata databazo en la dosiero .env post la paŝo 5 supre, kaj sekvu ekzekutante paŝojn 6-9 poste.
 
 Se restas iuj demandoj, bv. demandi en la Telegram-grupo [Retejo Esperanta](https://t.me/retejoesperanta).
