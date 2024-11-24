@@ -23,7 +23,6 @@ require __DIR__.'/backend.php';
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('/docs/{page}', [PageController::class, 'show'])->name('page.show');
+Route::get('/docs/{slug}', PageController::class)->name('page.show');

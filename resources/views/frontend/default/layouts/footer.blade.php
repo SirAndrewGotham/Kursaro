@@ -1,4 +1,4 @@
-<!-- ====== Footer Section Start -->
+{{-- ====== Footer Section Start --}}
 <footer class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]" data-wow-delay=".15s" style="visibility: hidden; animation-delay: 0.15s; animation-name: none;">
     <div class="container">
         <div class="flex flex-wrap -mx-4">
@@ -47,17 +47,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'features') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('Features') }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'about') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('About Us') }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'testimonials') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('Testimonials') }}
                             </a>
                         </li>
@@ -69,22 +69,22 @@
                     <h4 class="text-lg font-semibold text-white mb-9">{{ __('Features') }}</h4>
                     <ul>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'how-it-works') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('How it works') }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'privacy-policy') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('Privacy policy') }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'terms-of-service') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('Terms of Service') }}
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                            <a href="{{ route('page.show', 'legal-notice') }}" class="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                                 {{ __('Legal Notice') }}
                             </a>
                         </li>
@@ -114,29 +114,6 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">--}}
-{{--                <div class="w-full mb-10">--}}
-{{--                    <h4 class="text-lg font-semibold text-white mb-9">Visit:</h4>--}}
-{{--                    <div class="flex flex-col gap-8">--}}
-{{--                        <a href="https://legalerno.esperantejo.com" class="group flex items-center gap-[22px]">--}}
-{{--                            <div class="overflow-hidden rounded">--}}
-{{--                                <img class="max-w-[64px] h-auto" src="{{ asset('assets/frontend/images/blog/blog-01.jpg') }}" alt="Legalerno" />--}}
-{{--                            </div>--}}
-{{--                            <span class="max-w-[180px] text-gray-7 text-base group-hover:text-white">--}}
-{{--                                Learn Esperanto through reading--}}
-{{--                            </span>--}}
-{{--                        </a>--}}
-{{--                        <a href="https://fotoj.esperantejo.com" class="group flex items-center gap-[22px]">--}}
-{{--                            <div class="overflow-hidden rounded">--}}
-{{--                                <img class="max-w-[64px] h-auto" src="{{ asset('assets/frontend/images/blog/blog-02.jpg') }}" alt="FotoEsperanta">--}}
-{{--                            </div>--}}
-{{--                            <span class="max-w-[180px] text-gray-7 text-base group-hover:text-white">--}}
-{{--                            Esperanto Photography--}}
-{{--                </span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </div>
 
@@ -149,10 +126,10 @@
                             <a href="{{ route('page.show', 'privacy-policy') }}" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
                                 {{ __('Privacy policy') }}
                             </a>
-                            <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                            <a href="{{ route('page.show', 'legal-notice') }}" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
                                 {{ __('Legal Notice') }}
                             </a>
-                            <a href="javascript:void(0)" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                            <a href="{{ route('page.show', 'terms-of-service') }}" class="px-3 text-base text-gray-7 hover:text-white hover:underline">
                                 {{ __('Terms of Service') }}
                             </a>
                         </div>
@@ -183,7 +160,7 @@
 
         <span class="absolute bottom-0 right-0 z-[-1]">
             {!! file_get_contents(public_path('assets/frontend/images/footer/shape-3.svg')) !!}
-      </span>
+        </span>
 
         <span class="absolute top-0 right-0 z-[-1]">
         <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -240,4 +217,4 @@
       </span>
     </div>
 </footer>
-<!-- ====== Footer Section End -->
+{{--// ====== Footer Section End --}}

@@ -3,65 +3,22 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePageRequest;
-use App\Http\Requests\UpdatePageRequest;
+use App\Models\Language;
 use App\Models\Page;
 
-class PageController
+class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function __invoke(string $slug)
     {
-        //
-    }
+        $language_id = Language::where('code', app()->getLocale())->first()->id;
+        $default = Page::where([['slug', $slug],['page_id', null]])->first();
+        $page = Page::where([['is_active', true],['page_id', $default->id],['language_id', $language_id]])->first();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        if($page == null)
+        {
+            $page = $default;
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorePageRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Page $page)
-    {
-        return $page;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Page $page)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePageRequest $request, Page $page)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Page $page)
-    {
-        //
+        return view('frontend.default.home.index', ['content' => $page->content]);
     }
 }

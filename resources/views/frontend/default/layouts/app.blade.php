@@ -59,9 +59,9 @@
 {{ $slot }}
 <!-- ====== Main End ====== -->
 
-<!-- ====== Footer Section Start -->
+{{-- ====== Footer Section Start --}}
 @include('frontend.default.layouts.footer')
-<!-- ====== Footer Section End -->
+{{-- ====== Footer Section End --}}
 
 <!-- ====== Back To Top Start -->
 <a
