@@ -28,7 +28,7 @@
             :aria-expanded="open"
             :aria-controls="$id('dropdown-button')"
             type="button"
-            class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100"
+            class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:text-gray-200 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100"
         >
             <span class="mr-2">
                 <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
@@ -51,10 +51,10 @@
             x-on:click.outside="close($refs.button)"
             :id="$id('dropdown-button')"
             style="display: none;"
-            class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 dark:divide-gray-500 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-600 dark:hover:bg-gray-700 dark:text-gray-200 dark:hover:text-gray-200"
         >
             @foreach(App\Models\Language::where('is_active', true)->get() as $locale)
-                <a href="{{ route('locale', $locale->code) }}" class="group flex items-center px-4 py-2 text-sm text-gray-700">
+                <a href="{{ route('locale', $locale->code) }}" class="group flex items-center px-4 py-2 text-sm">
                     <span class="mr-2">
                         <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
                             {!! file_get_contents(public_path('assets/flags/'.$locale->code.'.svg')) !!}

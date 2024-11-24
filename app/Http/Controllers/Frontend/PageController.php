@@ -12,6 +12,10 @@ class PageController extends Controller
     {
         $language_id = Language::where('code', app()->getLocale())->first()->id;
         $default = Page::where([['slug', $slug],['page_id', null]])->first();
+        if($default == null)
+        {
+            return redirect()->route('home')->with('error', trans('Requested page does not exist.'));
+        }
         $page = Page::where([['is_active', true],['page_id', $default->id],['language_id', $language_id]])->first();
 
         if($page == null)
