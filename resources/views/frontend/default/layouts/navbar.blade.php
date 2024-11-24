@@ -6,7 +6,7 @@
             <div class="max-w-full px-4 w-60">
                 <a href="{{ route('home') }}" class="block w-full py-5 navbar-logo">
                     <svg width="64px" height="64px">
-                    {!! file_get_contents(public_path('assets/images/site_logo.svg')) !!}
+                        {!! file_get_contents(public_path('assets/images/site_logo.svg')) !!}
                     </svg>
                 </a>
             </div>

@@ -30,6 +30,11 @@
             type="button"
             class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100"
         >
+            <span class="mr-2">
+                <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
+                    {!! file_get_contents(public_path('assets/flags/'.app()->getLocale().'.svg')) !!}
+                </svg>
+            </span>
             {{ strtoupper(app()->getLocale()) }} <span class="font-light">({{ App\Models\Language::where('code', app()->getLocale())->first()->name }})</span>
 
             {{-- Heroicon: chevron-down --}}
@@ -50,6 +55,11 @@
         >
             @foreach(App\Models\Language::where('is_active', true)->get() as $locale)
                 <a href="{{ route('locale', $locale->code) }}" class="group flex items-center px-4 py-2 text-sm text-gray-700">
+                    <span class="mr-2">
+                        <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
+                            {!! file_get_contents(public_path('assets/flags/'.$locale->code.'.svg')) !!}
+                        </svg>
+                    </span>
                     {{ strtoupper($locale->code) }} ({{ $locale->name }})
                 </a>
             @endforeach
