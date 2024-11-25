@@ -1,6 +1,6 @@
 @extends('backend.default.layouts.app')
 @section('content')
-@can('banner_create')
+{{--@can('banner_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.banners.create') }}">
@@ -12,7 +12,7 @@
             @include('csvImport.modal', ['model' => 'Banner', 'route' => 'admin.banners.parseCsvImport'])
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 <div class="card">
     <div class="card-header">
         {{ trans('back.banner.title_singular') }} {{ trans('global.list') }}
@@ -130,7 +130,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('banner_delete')
+{{--@can('banner_delete')--}}
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}';
   let deleteButton = {
     text: deleteButtonTrans,
@@ -158,7 +158,7 @@
     }
   }
   dtButtons.push(deleteButton)
-@endcan
+{{--@endcan--}}
 
   let dtOverrideGlobals = {
     buttons: dtButtons,

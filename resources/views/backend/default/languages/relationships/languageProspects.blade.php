@@ -1,4 +1,4 @@
-@can('prospect_create')
+{{--@can('prospect_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.prospects.create') }}">
@@ -6,7 +6,7 @@
             </a>
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 
 <div class="card">
     <div class="card-header">
@@ -113,25 +113,25 @@
                                 @endforeach
                             </td>
                             <td>
-                                @can('prospect_show')
+{{--                                @can('prospect_show')--}}
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.prospects.show', $prospect->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('prospect_edit')
+{{--                                @can('prospect_edit')--}}
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.prospects.edit', $prospect->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('prospect_delete')
+{{--                                @can('prospect_delete')--}}
                                     <form action="{{ route('admin.prospects.destroy', $prospect->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+{{--                                @endcan--}}
 
                             </td>
 
@@ -176,7 +176,7 @@
     }
   }
   dtButtons.push(deleteButton)
-@endcan
+{{--@endcan--}}
 
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,

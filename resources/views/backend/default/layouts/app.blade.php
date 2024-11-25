@@ -25,7 +25,7 @@
     @yield('styles')
 </head>
 
-<body class="c-app">12345
+<body class="c-app">
 @include('backend.default.layouts.menu')
 <div class="c-wrapper">
     <header class="c-header c-header-fixed px-3">

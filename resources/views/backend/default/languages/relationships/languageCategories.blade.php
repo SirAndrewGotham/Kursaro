@@ -1,4 +1,4 @@
-@can('category_create')
+{{--@can('category_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.categories.create') }}">
@@ -6,7 +6,7 @@
             </a>
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 
 <div class="card">
     <div class="card-header">
@@ -73,25 +73,25 @@
                                 {{ $category->category->name ?? '' }}
                             </td>
                             <td>
-                                @can('category_show')
+{{--                                @can('category_show')--}}
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.categories.show', $category->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('category_edit')
+{{--                                @can('category_edit')--}}
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.categories.edit', $category->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('category_delete')
+{{--                                @can('category_delete')--}}
                                     <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+{{--                                @endcan--}}
 
                             </td>
 
@@ -108,7 +108,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('category_delete')
+{{--@can('category_delete')--}}
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
@@ -136,7 +136,7 @@
     }
   }
   dtButtons.push(deleteButton)
-@endcan
+{{--@endcan--}}
 
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,

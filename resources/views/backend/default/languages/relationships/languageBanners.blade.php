@@ -1,4 +1,4 @@
-@can('banner_create')
+{{--@can('banner_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.banners.create') }}">
@@ -6,7 +6,7 @@
             </a>
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 
 <div class="card">
     <div class="card-header">
@@ -114,25 +114,25 @@
                                 @endif
                             </td>
                             <td>
-                                @can('banner_show')
+{{--                                @can('banner_show')--}}
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.banners.show', $banner->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('banner_edit')
+{{--                                @can('banner_edit')--}}
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.banners.edit', $banner->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+{{--                                @endcan--}}
 
-                                @can('banner_delete')
+{{--                                @can('banner_delete')--}}
                                     <form action="{{ route('admin.banners.destroy', $banner->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+{{--                                @endcan--}}
 
                             </td>
 
@@ -149,7 +149,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('banner_delete')
+{{--@can('banner_delete')--}}
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
@@ -177,7 +177,7 @@
     }
   }
   dtButtons.push(deleteButton)
-@endcan
+{{--@endcan--}}
 
   $.extend(true, $.fn.dataTable.defaults, {
     orderCellsTop: true,
