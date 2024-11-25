@@ -48,22 +48,22 @@
     @yield('styles')
 </head>
 <body x-data="{darkMode: false}" :class="{'dark': darkMode === true }" class="antialiased">
-<!-- ====== Navbar Section Start -->
+{{-- ====== Navbar Section Start --}}
 @include('frontend.default.layouts.navbar')
-<!-- ====== Navbar Section End -->
+{{--// ====== Navbar Section End --}}
 
-<!-- ====== Hero Section Start -->
-<!-- ====== Hero Section End -->
+{{-- ====== Hero Section Start --}}
+{{-- ====== Hero Section End --}}
 
-<!-- ====== Main Section Start -->
+{{-- ====== Main Section Start --}}
 {{ $slot }}
-<!-- ====== Main End ====== -->
+{{-- ====== Main End ====== --}}
 
 {{-- ====== Footer Section Start --}}
 @include('frontend.default.layouts.footer')
 {{-- ====== Footer Section End --}}
 
-<!-- ====== Back To Top Start -->
+{{-- ====== Back To Top Start --}}
 <a
     href="javascript:void(0)"
     class="
@@ -92,9 +92,9 @@
           class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"
       ></span>
 </a>
-<!-- ====== Back To Top End -->
+{{--// ====== Back To Top End --}}
 
-<!-- ====== All Scripts -->
+{{-- ====== All Scripts --}}
 
 <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 <script>
@@ -140,5 +140,6 @@
 
     window.document.addEventListener("scroll", onScroll);
 </script>
+{{--// ====== All Scripts End --}}
 </body>
 </html>

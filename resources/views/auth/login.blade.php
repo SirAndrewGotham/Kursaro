@@ -1,8 +1,8 @@
 <x-frontend-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            {{ __('Welcome to Kursaro') }}
-{{--            <x-authentication-card-logo />--}}
+{{--            {{ __('Welcome to Kursaro') }}--}}
+                        <x-authentication-card-logo />
         </x-slot>
 
         <x-validation-errors class="mb-4" />
@@ -29,13 +29,13 @@
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-200">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4 px-4">
+            <div class="flex items-center justify-end mt-4 px-4 dark:bg-gray-600 dark:text-gray-200">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:text-gray-200" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
