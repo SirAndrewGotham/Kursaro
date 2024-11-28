@@ -36,12 +36,14 @@ class HomeController extends Controller
                 $viewGate      = 'home_show';
                 $editGate      = 'home_edit';
                 $deleteGate    = 'home_delete';
+                $translateGate = 'home_translate';
                 $crudRoutePart = 'homes';
 
                 return view('backend.default.layouts.datatablesActions', compact(
                     'viewGate',
                     'editGate',
                     'deleteGate',
+                    'translateGate',
                     'crudRoutePart',
                     'row'
                 ));
@@ -54,11 +56,18 @@ class HomeController extends Controller
                 return $row->language ? $row->language->english : '';
             });
 
-            $table->editColumn('language.name', function ($row) {
-                return $row->language ? (is_string($row->language) ? $row->language : $row->language->name) : '';
+            $table->addColumn('is_default', function($row){
+                if($row->is_default){
+                    return __("Default");
+                }
             });
-            $table->editColumn('title', function ($row) {
-                return $row->title ? $row->title : '';
+
+            $table->addColumn('is_active', function($row){
+                if($row->is_active){
+                    return __("Enabled");
+                }else{
+                    return __("Disabled");
+                }
             });
 
             $table->rawColumns(['actions', 'placeholder', 'language']);
@@ -82,7 +91,27 @@ class HomeController extends Controller
 
     public function store(StoreHomeRequest $request)
     {
+        $exists = Home::where('language_id', $request->language_id);
+        if($exists)
+        {
+            return redirect()->route('admin.homes.index')->with('message', 'Such page already exists. You might want to edit it instead of creating anew. If you don\'t see it in the list, it might have been deleted; request your Admin to restore the page before you would be able to edit it.');
+        }
+        if($request->is_default)
+        {
+            //just in case if there were errors in code, check multiple
+            $olds = Home::where('is_default', true)->get();
+            foreach($olds as $old)
+            {
+                $old->update(['is_default'=>false]);
+            }
+        }
+
         $home = Home::create($request->all());
+
+        // just in case, enforce is_active to be true for the default home page
+        if($request->is_default) {
+            $home->update(['is_active' => true]);
+        }
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $home->id]);
@@ -104,7 +133,21 @@ class HomeController extends Controller
 
     public function update(UpdateHomeRequest $request, Home $home)
     {
+        if($request->is_default)
+        {
+            //just in case if there were errors in code, check multiple
+            $olds = Home::where('is_default', true)->get();
+            foreach($olds as $old)
+            {
+                $old->update(['is_default'=>false]);
+            }
+        }
         $home->update($request->all());
+
+        // just in case, enforce is_active to be true for the default home page
+        if($request->is_default) {
+            $home->update(['is_active' => true]);
+        }
 
         return redirect()->route('admin.homes.index');
     }
@@ -121,6 +164,10 @@ class HomeController extends Controller
     public function destroy(Home $home)
     {
 //        abort_if(Gate::denies('home_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        if($home->is_default)
+        {
+            return redirect()->route('admin.homes.index')->with('message', 'You can not delete default page without making another one default first. Please make another page default, and try again.');
+        }
 
         $home->delete();
 
@@ -129,6 +176,7 @@ class HomeController extends Controller
 
     public function massDestroy(MassDestroyHomeRequest $request)
     {
+        // todo: exclude default id from mass deletion with appropriate notice
         $homes = Home::find(request('ids'));
 
         foreach ($homes as $home) {
@@ -148,5 +196,17 @@ class HomeController extends Controller
         $media         = $model->addMediaFromRequest('upload')->toMediaCollection('ck-media');
 
         return response()->json(['id' => $media->id, 'url' => $media->getUrl()], Response::HTTP_CREATED);
+    }
+
+    public function translate(Home $home)
+    {
+//        abort_if(Gate::denies('home_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        // todo: give only unused languages
+        $languages = Language::pluck('english', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        $home->load('language');
+
+        return view('backend.default.homes.translate', compact('home', 'languages'));
     }
 }

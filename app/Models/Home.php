@@ -27,9 +27,11 @@ class Home extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'is_default',
         'language_id',
         'title',
         'content',
+        'is_active',
         'created_at',
         'updated_at',
         'deleted_at',

@@ -17,12 +17,30 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('back.home.fields.id') }}
+                            {{ trans('Default') }}
                         </th>
                         <td>
-                            {{ $home->id }}
+                            @if($home->is_default)
+                                {{ __('Yes') }}
+                            @else
+                                {{ __('No') }}
+                            @endif
                         </td>
                     </tr>
+                    @if(!$home->is_default)
+                    <tr>
+                        <th>
+                            {{ trans('back.home.fields.is_active') }}
+                        </th>
+                        <td>
+                            @if($home->is_active)
+                                {{ __('Enabled') }}
+                            @else
+                                {{ __('Disabled') }}
+                            @endif
+                        </td>
+                    </tr>
+                    @endif
                     <tr>
                         <th>
                             {{ trans('back.home.fields.language') }}

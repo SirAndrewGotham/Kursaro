@@ -15,3 +15,10 @@
         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
     </form>
 {{--@endcan--}}
+@if($crudRoutePart == 'homes')
+{{--@can($translateGate)--}}
+<a class="btn btn-xs btn-light" href="{{ route('admin.' . $crudRoutePart . '.translate', $row->id) }}">
+    {{ trans('back.home.fields.translate') }}
+</a>
+{{--@endcan--}}
+@endif

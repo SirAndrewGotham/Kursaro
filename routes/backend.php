@@ -73,6 +73,8 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::post('homes/ckmedia', [HomeController::class, 'storeCKEditorImages'])->name('homes.storeCKEditorImages');
     Route::post('homes/parse-csv-import', [HomeController::class, 'parseCsvImport'])->name('homes.parseCsvImport');
     Route::post('homes/process-csv-import', [HomeController::class, 'processCsvImport'])->name('homes.processCsvImport');
+    Route::get('homes/{home}/translate', [HomeController::class, 'translate'])->name('homes.translate');
+//    Route::post('homes/translate', [HomeController::class, 'store_translation'])->name('homes.translate');
     Route::resource('homes', HomeController::class);
 
     // Category

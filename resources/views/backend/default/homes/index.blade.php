@@ -4,7 +4,7 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.homes.create') }}">
-                {{ trans('global.add') }} {{ trans('back.home.title_singular') }}
+                {{ trans('global.add') }} {{ trans('back.home.fields.translation') }}
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
@@ -21,32 +21,37 @@
     <div class="card-body">
         <table class=" table table-bordered table-striped table-hover ajaxTable datatable datatable-Home">
             <thead>
+            {{-- Header section --}}
                 <tr>
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.home.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.home.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.home.fields.language') }}
                     </th>
                     <th>
-                        {{ trans('back.language.fields.name') }}
+{{--                        {{ trans('back.language.fields.name') }}--}}
                     </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.home.fields.title') }}--}}
+{{--                    </th>--}}
                     <th>
-                        {{ trans('back.home.fields.title') }}
+                        &nbsp;
                     </th>
                     <th>
                         &nbsp;
                     </th>
                 </tr>
+                {{-- Data section --}}
                 <tr>
                     <td>
                     </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <select class="search">
                             <option value>{{ trans('global.all') }}</option>
@@ -56,10 +61,14 @@
                         </select>
                     </td>
                     <td>
+                        {{-- default --}}
                     </td>
                     <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                        {{-- active --}}
                     </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                     </td>
                 </tr>
@@ -114,12 +123,11 @@
     aaSorting: [],
     ajax: "{{ route('admin.homes.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'language_english', name: 'language.english' },
-{ data: 'language.name', name: 'language.name' },
-{ data: 'title', name: 'title' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        { data: 'language_english', name: 'language.english' },
+        { data: 'is_default', name: '' },
+        { data: 'is_active', name: '' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
     order: [[ 1, 'desc' ]],

@@ -16,10 +16,10 @@ class Page extends Model implements HasMedia
 
     public $table = 'pages';
 
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
-    }
+//    public function getRouteKeyName(): string
+//    {
+//        return 'slug';
+//    }
 
     public static $searchable = [
         'title',

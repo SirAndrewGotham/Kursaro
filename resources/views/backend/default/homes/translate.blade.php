@@ -7,14 +7,20 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.homes.update", [$home->id]) }}" enctype="multipart/form-data">
-            @method('PUT')
+        <form method="POST" action="{{ route("admin.homes.store", [$home->id]) }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="language_id">{{ trans('back.home.fields.language') }}</label>
-                <div class="">
-                    {{ $home->language->name }}
-                </div>
+                <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
+                    @foreach($languages as $id => $entry)
+                        <option value="{{ $id }}" {{ old('language_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('language'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('language') }}
+                    </div>
+                @endif
                 <span class="help-block">{{ trans('back.home.fields.language_helper') }}</span>
             </div>
             <div class="form-group">

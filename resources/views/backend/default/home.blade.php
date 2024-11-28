@@ -15,7 +15,12 @@
                             </div>
                         @endif
 
-                        Bonevenon al la administra sekcio.
+                        <h2>Bonevenon al la administra sekcio.</h2>
+                        <p>Nun eblas labori kun la Hejma paĝo (tradukoj)</p>
+                        <p>kaj</p>
+                        <p>Lingvoj (plibonigota)</p>
+                        <br />
+                        <p>Laboroj estas daŭrigataj.</p>
                     </div>
                 </div>
             </div>
