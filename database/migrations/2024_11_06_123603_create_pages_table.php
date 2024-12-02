@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_default')->default(false);
             $table->bigInteger('page_id')->nullable()->unsigned()->index();
             $table->foreignIdFor(\App\Models\Language::class)->nullable()->constrained('id')->on('languages')->onDelete('SET NULL');
             $table->string('title');

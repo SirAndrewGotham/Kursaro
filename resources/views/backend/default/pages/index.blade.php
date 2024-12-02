@@ -25,9 +25,9 @@
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.page.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.page.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.page.fields.title') }}
                     </th>
@@ -44,22 +44,22 @@
                 <tr>
                     <td>
                     </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
                     </td>
                     <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <select class="search">
-                            <option value>{{ trans('global.all') }}</option>
-                            @foreach($pages as $key => $item)
-                                <option value="{{ $item->title }}">{{ $item->title }}</option>
-                            @endforeach
-                        </select>
+{{--                        <select class="search">--}}
+{{--                            <option value>{{ trans('global.all') }}</option>--}}
+{{--                            @foreach($pages as $key => $item)--}}
+{{--                                <option value="{{ $item->title }}">{{ $item->title }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
                     </td>
                     <td>
                     </td>
@@ -115,12 +115,12 @@
     aaSorting: [],
     ajax: "{{ route('admin.pages.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'title', name: 'title' },
-{ data: 'views', name: 'views' },
-{ data: 'page_title', name: 'page.title' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        // { data: 'id', name: 'id' },
+        { data: 'title', name: 'title' },
+        { data: 'views', name: 'views' },
+        { data: 'page_title', name: 'page.title' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
     order: [[ 1, 'desc' ]],

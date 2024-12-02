@@ -5,6 +5,8 @@ namespace App\Models;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -33,11 +35,14 @@ class Page extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'is_default',
+        'page_id',
+        'language_id',
         'title',
         'slug',
         'content',
         'views',
-        'page_id',
+        'is_active',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -54,13 +59,28 @@ class Page extends Model implements HasMedia
         $this->addMediaConversion('preview')->fit('crop', 120, 120);
     }
 
-    public function pagePages()
+    public function pagePages(): HasMany
     {
         return $this->hasMany(self::class, 'page_id', 'id');
     }
 
-    public function page()
+    public function translations(): HasMany
+    {
+        return $this->hasMany(self::class, 'page_id', 'id');
+    }
+
+    public function page(): BelongsTo
     {
         return $this->belongsTo(self::class, 'page_id');
+    }
+
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'page_id');
+    }
+
+    public function language(): BelongsTo
+    {
+        return $this->belongsTo(Language::class, 'language_id');
     }
 }

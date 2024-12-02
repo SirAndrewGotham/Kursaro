@@ -8,6 +8,7 @@ use App\Concerns\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyPageRequest;
 use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
+use App\Models\Language;
 use App\Models\Page;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class PageController extends Controller
 //        abort_if(Gate::denies('page_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Page::with(['page'])->select(sprintf('%s.*', (new Page)->table));
+            $query = Page::where('is_default', true)->with(['page'])->select(sprintf('%s.*', (new Page)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');
@@ -45,9 +46,9 @@ class PageController extends Controller
                 ));
             });
 
-            $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : '';
-            });
+//            $table->editColumn('id', function ($row) {
+//                return $row->id ? $row->id : '';
+//            });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
@@ -63,7 +64,7 @@ class PageController extends Controller
             return $table->make(true);
         }
 
-        $pages = Page::get();
+        $pages = Page::where('page_id', null)->get();
 
         return view('backend.default.pages.index', compact('pages'));
     }
@@ -79,6 +80,9 @@ class PageController extends Controller
 
     public function store(StorePageRequest $request)
     {
+        // todo: create 2 models:
+        // first one with id and slug
+        // second one with the above id and real page data
         $page = Page::create($request->all());
 
         if ($media = $request->input('ck-media', false)) {
@@ -91,16 +95,18 @@ class PageController extends Controller
     public function edit(Page $page)
     {
 //        abort_if(Gate::denies('page_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $languages = Language::all();
 
         $pages = Page::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $page->load('page');
 
-        return view('backend.default.pages.edit', compact('page', 'pages'));
+        return view('backend.default.pages.edit', compact('page', 'pages', 'languages'));
     }
 
     public function update(UpdatePageRequest $request, Page $page)
     {
+        dd($page);
         $page->update($request->all());
 
         return redirect()->route('admin.pages.index');

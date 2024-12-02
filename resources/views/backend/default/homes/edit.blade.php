@@ -20,7 +20,7 @@
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
                     <input type="hidden" name="is_active" value="0">
-                    <input class="form-check-input" type="checkbox" name="is_active" id="is_sctive" value="1" {{ $home->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $home->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
                     <label class="form-check-label" for="is_active">{{ trans('back.home.fields.is_active') }}</label>
                 </div>
                 @if($errors->has('is_active'))

@@ -86,6 +86,11 @@ class HomeController extends Controller
 
         $languages = Language::pluck('english', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        // remove used languages from the collection
+        foreach (Home::all() as $home) {
+            $languages->forget($home->language_id);
+        }
+
         return view('backend.default.homes.create', compact('languages'));
     }
 
@@ -146,7 +151,7 @@ class HomeController extends Controller
 
         // just in case, enforce is_active to be true for the default home page
         if($request->is_default) {
-            $home->update(['is_active' => true]);
+            $home->update(['is_active' => true, 'is_default' => true]);
         }
 
         return redirect()->route('admin.homes.index');
@@ -176,7 +181,16 @@ class HomeController extends Controller
 
     public function massDestroy(MassDestroyHomeRequest $request)
     {
-        // todo: exclude default id from mass deletion with appropriate notice
+        // exclude default id from mass deletion
+        $default = Home::where('is_default', true)->first();
+        // Retrieve the array from the request
+        $array = request('ids');
+        // Remove elements from the array (example: remove elements with specific values)
+        $array = array_diff($array, [$default->id]);
+        // Update the request with the modified array
+        request()->merge(['ids' => $array]);
+
+        // prepare collection of homes with selected ids, but default home page id
         $homes = Home::find(request('ids'));
 
         foreach ($homes as $home) {
@@ -202,8 +216,12 @@ class HomeController extends Controller
     {
 //        abort_if(Gate::denies('home_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        // todo: give only unused languages
         $languages = Language::pluck('english', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        // remove used languages from the collection
+        foreach (Home::all() as $home) {
+            $languages->forget($home->language_id);
+        }
 
         $home->load('language');
 

@@ -1,7 +1,16 @@
 <div id="sidebar" class="c-sidebar c-sidebar-fixed c-sidebar-lg-show">
 
-    <div class="c-sidebar-brand d-md-down-none">
-        <a class="c-sidebar-brand-full h4" href="#">
+    <div class="c-sidebar-brand-full text-left d-md-down-none px-4 py-2">
+        {{-- Logo --}}
+{{--        <div class="max-w-full px-4 w-60">--}}
+            <a href="{{ route('admin.home') }}" class="block w-full py-1 navbar-logo mr-2">
+                <svg width="64px" height="64px">
+                    {!! file_get_contents(public_path('assets/images/site_logo.svg')) !!}
+                </svg>
+            </a>
+{{--        </div>--}}
+        {{--// Logo --}}
+        <a class="h4" href="{{ route('admin.home') }}">
             {{ trans('panel.site_title') }}
         </a>
     </div>
@@ -75,15 +84,15 @@
                 </li>
                 {{--                    @endcan--}}
                 {{--                    @can('category_access')--}}
-                <li class="c-sidebar-nav-item ml-4">
-                    <a href="{{ route("admin.categories.index") }}"
-                       class="c-sidebar-nav-link {{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "c-active" : "" }}">
-                        <i class="fa-fw fas fa-list-ol c-sidebar-nav-icon">
+{{--                <li class="c-sidebar-nav-item ml-4">--}}
+{{--                    <a href="{{ route("admin.categories.index") }}"--}}
+{{--                       class="c-sidebar-nav-link {{ request()->is("admin/categories") || request()->is("admin/categories/*") ? "c-active" : "" }}">--}}
+{{--                        <i class="fa-fw fas fa-list-ol c-sidebar-nav-icon">--}}
 
-                        </i>
-                        {{ trans('back.category.title') }}
-                    </a>
-                </li>
+{{--                        </i>--}}
+{{--                        {{ trans('back.category.title') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 {{--                    @endcan--}}
                 {{--                    @can('contact_type_access')--}}
                 <li class="c-sidebar-nav-item ml-4">
@@ -221,26 +230,28 @@
                 </li>
                 {{--                    @endcan--}}
                 {{--                    @can('permission_access')--}}
-                <li class="c-sidebar-nav-item ml-4">
-                    <a href="{{ route("admin.permissions.index") }}"
-                       class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">
-                        <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
+                {{-- Not implemented in this version --}}
+{{--                <li class="c-sidebar-nav-item ml-4">--}}
+{{--                    <a href="{{ route("admin.permissions.index") }}"--}}
+{{--                       class="c-sidebar-nav-link {{ request()->is("admin/permissions") || request()->is("admin/permissions/*") ? "c-active" : "" }}">--}}
+{{--                        <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">--}}
 
-                        </i>
-                        {{ trans('back.permission.title') }}
-                    </a>
-                </li>
+{{--                        </i>--}}
+{{--                        {{ trans('back.permission.title') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 {{--                    @endcan--}}
                 {{--                    @can('role_access')--}}
-                <li class="c-sidebar-nav-item ml-4">
-                    <a href="{{ route("admin.roles.index") }}"
-                       class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">
-                        <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
+                {{-- Not implemented in this version --}}
+{{--                <li class="c-sidebar-nav-item ml-4">--}}
+{{--                    <a href="{{ route("admin.roles.index") }}"--}}
+{{--                       class="c-sidebar-nav-link {{ request()->is("admin/roles") || request()->is("admin/roles/*") ? "c-active" : "" }}">--}}
+{{--                        <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">--}}
 
-                        </i>
-                        {{ trans('back.role.title') }}
-                    </a>
-                </li>
+{{--                        </i>--}}
+{{--                        {{ trans('back.role.title') }}--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 {{--                    @endcan--}}
                 {{--                    @can('user_access')--}}
                 <li class="c-sidebar-nav-item ml-4">
