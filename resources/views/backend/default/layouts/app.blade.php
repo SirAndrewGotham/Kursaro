@@ -28,7 +28,7 @@
         </button>
         <ul class="c-header-nav ml-auto">
 {{--            @include('backend.default.layouts.languageSwitcher')--}}
-            @if(count(config('backend.available_languages', [])) > 1)
+            @if(count(App\Models\Language::where('is_active', true)->get()) > 1)
                 <li class="c-header-nav-item dropdown d-md-down-none">
                     <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         {{ strtoupper(app()->getLocale()) }}
