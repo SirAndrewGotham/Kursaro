@@ -1,5 +1,5 @@
 {{-- ====== Navbar Section Start --}}
-<div class="absolute top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header sticky">
+<div class="top-0 left-0 z-40 flex items-center w-full bg-transparent ud-header sticky">
     <div class="container">
         <div class="relative flex items-center justify-between -mx-4">
             {{-- Logo --}}
