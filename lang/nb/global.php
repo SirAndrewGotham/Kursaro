@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Dashbord',
     'delete'                         => 'Slett',
     'cancel'                         => 'Avbryt',
+    'translate'                      => 'Oversett',
+    'language'                       => 'Språk',
     'clear'                          => 'Slette',
     'downloadFile'                   => 'Last ned fil',
     'edit'                           => 'Rediger',

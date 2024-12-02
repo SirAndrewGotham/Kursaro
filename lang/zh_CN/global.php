@@ -9,6 +9,8 @@ return [
     'create'                         => '新增',
     'dashboard'                      => '資訊總覽',
     'delete'                         => '刪除',
+    'translate'                      => '翻译',
+    'language'                       => '语言',
     'cancel'                         => '取消',
     'clear'                          => '清除',
     'downloadFile'                   => '下載檔案',

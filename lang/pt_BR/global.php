@@ -9,6 +9,8 @@ return [
     'create'                         => 'Criar',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Excluir',
+    'translate'                      => 'Traduzir',
+    'language'                       => 'Linguagem',
     'cancel'                         => 'Cancelar',
     'clear'                          => 'Limpar',
     'downloadFile'                   => 'Download',

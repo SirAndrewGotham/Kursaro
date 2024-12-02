@@ -9,6 +9,8 @@ return [
     'create'                         => 'बनाइए (क्रिएट)',
     'dashboard'                      => 'डॅशबोर्ड',
     'delete'                         => 'मिटाइए',
+    'translate'                      => 'अनुवाद',
+    'language'                       => 'भाषा',
     'cancel'                         => 'रद्द करे',
     'clear'                          => 'स्पष्ट',
     'downloadFile'                   => 'फ़ाइल डाउनलोड करें',

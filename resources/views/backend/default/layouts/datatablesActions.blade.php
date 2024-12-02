@@ -20,7 +20,7 @@
 @if($crudRoutePart == 'homes')
 {{--@can($translateGate)--}}
 <a class="btn btn-xs btn-light" href="{{ route('admin.' . $crudRoutePart . '.translate', $row->id) }}">
-    {{ trans('back.home.fields.translate') }}
+    {{ trans('global.translate') }}
 </a>
 {{--@endcan--}}
 @endif

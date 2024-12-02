@@ -9,6 +9,8 @@ return [
     'create'                         => 'Loo',
     'dashboard'                      => 'Töölaud',
     'delete'                         => 'Kustuta',
+    'translate'                      => 'Ɖe gbe gɔme',
+    'language'                       => 'Gbegbᴐgblᴐ',
     'cancel'                         => 'Tühista',
     'clear'                          => 'Selge',
     'downloadFile'                   => 'Laadige fail alla',

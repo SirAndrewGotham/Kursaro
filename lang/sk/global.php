@@ -9,6 +9,8 @@ return [
     'create'                         => 'Vytvoriť:',
     'dashboard'                      => 'Nástenka',
     'delete'                         => 'Vymazať',
+    'translate'                      => 'Preložiť',
+    'language'                       => 'Jazyk',
     'cancel'                         => 'Zrušiť',
     'clear'                          => 'Vymaž',
     'downloadFile'                   => 'Stiahnuť súbor',

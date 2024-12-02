@@ -27,14 +27,24 @@
             <i class="fas fa-fw fa-bars"></i>
         </button>
         <ul class="c-header-nav ml-auto">
+{{--            @include('backend.default.layouts.languageSwitcher')--}}
             @if(count(config('backend.available_languages', [])) > 1)
                 <li class="c-header-nav-item dropdown d-md-down-none">
                     <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         {{ strtoupper(app()->getLocale()) }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        @foreach(config('backend.available_languages') as $langLocale => $langName)
-                            <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                        @foreach(App\Models\Language::where('is_active', true)->get() as $locale)
+                            <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $locale->code }}">
+                                @if(file_exists(public_path('assets/flags/'.$locale->code.'.svg')))
+                                    <span class="mr-2">
+                                        <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
+                                            {!! file_get_contents(public_path('assets/flags/'.$locale->code.'.svg')) !!}
+                                        </svg>
+                                    </span>
+                                @endif
+                                {{ strtoupper($locale->code) }} ({{ $locale->english }})
+                            </a>
                         @endforeach
                     </div>
                 </li>
@@ -75,6 +85,8 @@
 {{--@include('backend.default.layouts.scripts-cdn')--}}
 @include('backend.default.layouts.scripts-local')
 
+<script src="{{ asset('assets/backend/default/js/tailwind3.4.15.js') }}"></script>
+<script src="{{ asset('assets/backend/default/js/alpine3.min.js') }}"></script>
 <script src="{{ asset('assets/backend/default/js/main.js') }}"></script>
 <script>
     $(function() {

@@ -55,11 +55,13 @@
         >
             @foreach(App\Models\Language::where('is_active', true)->get() as $locale)
                 <a href="{{ route('locale', $locale->code) }}" class="group flex items-center px-4 py-2 text-sm">
-                    <span class="mr-2">
-                        <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
-                            {!! file_get_contents(public_path('assets/flags/'.$locale->code.'.svg')) !!}
-                        </svg>
-                    </span>
+                    @if(file_exists(public_path('assets/flags/'.$locale->code.'.svg')))
+                        <span class="mr-2">
+                            <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
+                                {!! file_get_contents(public_path('assets/flags/'.$locale->code.'.svg')) !!}
+                            </svg>
+                        </span>
+                    @endif
                     {{ strtoupper($locale->code) }} ({{ $locale->name }})
                 </a>
             @endforeach

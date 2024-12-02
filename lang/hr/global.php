@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Nadzorna ploča',
     'delete'                         => 'Izbriši',
     'cancel'                         => 'Otkaži',
+    'translate'                      => 'Prevesti',
+    'language'                       => 'Jezik',
     'clear'                          => 'Očistiti',
     'downloadFile'                   => 'Preuzmi datoteku',
     'edit'                           => 'Uredi',

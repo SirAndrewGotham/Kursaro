@@ -43,7 +43,7 @@
                     @endif
                     <tr>
                         <th>
-                            {{ trans('back.home.fields.language') }}
+                            {{ trans('global.language') }}
                         </th>
                         <td>
                             {{ $home->language->english ?? '' }}

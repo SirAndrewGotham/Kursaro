@@ -9,6 +9,8 @@ return [
     'create'                         => 'Стварыць',
     'dashboard'                      => 'Панель кіравання',
     'delete'                         => 'Выдаліць',
+    'translate'                      => 'Перакласці',
+    'language'                       => 'Мова',
     'cancel'                         => 'Cancel',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'Спампаваць файл',

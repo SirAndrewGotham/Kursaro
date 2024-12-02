@@ -25,7 +25,7 @@
                             {{ trans('back.home.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('back.home.fields.language') }}
+                            {{ trans('global.language') }}
                         </th>
                         <th>
                             {{ trans('back.language.fields.name') }}

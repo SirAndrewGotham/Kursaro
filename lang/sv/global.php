@@ -9,6 +9,8 @@ return [
     'create'                         => 'Skapa',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Radera',
+    'translate'                      => 'Översätta',
+    'language'                       => 'Språk',
     'cancel'                         => 'Avbryt',
     'clear'                          => 'Rensa',
     'downloadFile'                   => 'Hämta fil',

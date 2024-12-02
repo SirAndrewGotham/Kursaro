@@ -9,6 +9,8 @@ return [
     'create'                         => 'Izveidot',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Dzēst',
+    'translate'                      => 'Tulkot',
+    'language'                       => 'Valoda',
     'cancel'                         => 'Atcelt',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'Download file',

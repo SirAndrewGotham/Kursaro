@@ -9,6 +9,8 @@ return [
     'create'                         => 'ايجاد كردن',
     'dashboard'                      => 'داشبورد',
     'delete'                         => 'حذف',
+    'translate'                      => 'ترجمه کنید',
+    'language'                       => 'زبان',
     'cancel'                         => 'لغو',
     'clear'                          => 'پاک کردن',
     'downloadFile'                   => 'دریافت فایل',

@@ -9,6 +9,8 @@ return [
     'create'                         => 'Създай',
     'dashboard'                      => 'Табло',
     'delete'                         => 'Изтрий',
+    'translate'                      => 'Превеждай',
+    'language'                       => 'Език',
     'cancel'                         => 'Отказ',
     'clear'                          => 'Изчисти',
     'downloadFile'                   => 'Свали файл',

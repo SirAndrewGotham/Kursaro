@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Beranda',
     'delete'                         => 'Hapus',
     'cancel'                         => 'Batal',
+    'translate'                      => 'Menerjemahkan',
+    'language'                       => 'Bahasa',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'Unduh berkas',
     'edit'                           => 'Ubah',

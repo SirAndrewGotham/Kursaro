@@ -9,6 +9,8 @@ return [
     'create'                         => 'Kreiraj',
     'dashboard'                      => 'Nadzorna plošča',
     'delete'                         => 'Briši',
+    'translate'                      => 'Prevajaj',
+    'language'                       => 'Jezik',
     'cancel'                         => 'Prekliči',
     'clear'                          => 'Počisti',
     'downloadFile'                   => 'Prenos datoteke',

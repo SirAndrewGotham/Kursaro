@@ -9,6 +9,8 @@ return [
     'create'                         => 'બનાવો',
     'dashboard'                      => 'ડેશબોર્ડ',
     'delete'                         => 'દૂર કરો',
+    'translate'                      => 'અનુવાદ કરો',
+    'language'                       => 'ભાષા',
     'cancel'                         => 'રદ કરો',
     'clear'                          => 'ચોખ્ખુ',
     'downloadFile'                   => 'ફાઈલ ડાઉનલોડ',

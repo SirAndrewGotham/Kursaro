@@ -9,6 +9,8 @@ return [
     'create'                         => 'สร้าง',
     'dashboard'                      => 'กราฟและสถิติ',
     'delete'                         => 'ลบ',
+    'translate'                      => 'แปล',
+    'language'                       => 'ภาษา',
     'cancel'                         => 'ยกเลิก',
     'clear'                          => 'เครียร',
     'downloadFile'                   => 'ดาวน์โหลดไฟล์',

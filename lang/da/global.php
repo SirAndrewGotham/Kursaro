@@ -9,6 +9,8 @@ return [
     'create'                         => 'skab',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Slet',
+    'translate'                      => 'Oversætte',
+    'language'                       => 'Sprog',
     'cancel'                         => 'Afbestille',
     'clear'                          => 'Klar',
     'downloadFile'                   => 'Download fil',

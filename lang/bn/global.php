@@ -9,6 +9,8 @@ return [
     'create'                         => 'তৈরি',
     'dashboard'                      => 'ড্যাশবোর্ড',
     'delete'                         => 'মুছুন',
+    'translate'                      => 'অনুবাদ করুন',
+    'language'                       => 'ভাষা',
     'cancel'                         => 'বাতিল করুন',
     'clear'                          => 'ক্লিয়ার করুন',
     'downloadFile'                   => 'ডাউনলোড ফাইল',

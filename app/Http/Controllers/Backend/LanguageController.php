@@ -144,4 +144,15 @@ class LanguageController extends Controller
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
+    public function locale($locale)
+    {
+        // Set current locale to the one requested
+        app()->setLocale($locale);
+
+        // Store language into the session
+        session()->put('locale', $locale);
+
+        return redirect()->back();
+    }
 }

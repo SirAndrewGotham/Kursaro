@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route("admin.homes.store", [$home->id]) }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="language_id">{{ trans('back.home.fields.language') }}</label>
+                <label for="language_id">{{ trans('global.language') }}</label>
                 <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
                     @foreach($languages as $id => $entry)
                         <option value="{{ $id }}" {{ old('language_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -21,7 +21,7 @@
                         {{ $errors->first('language') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('back.home.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('global.language_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">

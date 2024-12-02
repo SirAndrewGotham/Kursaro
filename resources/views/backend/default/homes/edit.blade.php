@@ -11,11 +11,11 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="language_id">{{ trans('back.home.fields.language') }}</label>
+                <label for="language_id">{{ trans('global.language') }}</label>
                 <div class="">
                     {{ $home->language->name }}
                 </div>
-                <span class="help-block">{{ trans('back.home.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('global.language_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">

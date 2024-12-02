@@ -9,6 +9,8 @@ return [
     'create'                         => 'Kreiraj',
     'dashboard'                      => 'Komandna tabla',
     'delete'                         => 'Obriši',
+    'translate'                      => 'Prevedi',
+    'language'                       => 'Јezik',
     'cancel'                         => 'Otkaži',
     'clear'                          => 'Ocisti',
     'downloadFile'                   => 'Preuzmi fajl',

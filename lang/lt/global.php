@@ -9,6 +9,8 @@ return [
     'create'                         => 'Sukurti',
     'dashboard'                      => 'Pagrindinis',
     'delete'                         => 'Trinti',
+    'translate'                      => 'Išversti',
+    'language'                       => 'Kalba',
     'cancel'                         => 'Atšaukti',
     'clear'                          => 'Išvalyti',
     'downloadFile'                   => 'Atsisiųsti failą',

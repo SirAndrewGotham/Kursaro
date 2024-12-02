@@ -9,6 +9,8 @@ return [
     'create'                         => 'Cipta',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Padam',
+    'translate'                      => 'Terjemah',
+    'language'                       => 'Bahasa',
     'cancel'                         => 'Batal',
     'clear'                          => 'Bersih',
     'downloadFile'                   => 'Muat turun fail',

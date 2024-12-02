@@ -9,6 +9,8 @@ return [
     'create'                         => 'Creați',
     'dashboard'                      => 'Informații generale',
     'delete'                         => 'Șterge',
+    'translate'                      => 'Traduce',
+    'language'                       => 'Limbă',
     'cancel'                         => 'Renunță',
     'clear'                          => 'Șterge',
     'downloadFile'                   => 'Descărcare fișier',

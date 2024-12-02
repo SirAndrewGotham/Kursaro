@@ -9,6 +9,8 @@ return [
     'create'                         => 'Qo\'shish',
     'dashboard'                      => 'Boshqaruv paneli',
     'delete'                         => 'Oʻchirish',
+    'translate'                      => 'Tarjima',
+    'language'                       => 'Til',
     'cancel'                         => 'Bekor qilish',
     'clear'                          => 'Tozalash',
     'downloadFile'                   => 'Faylni yuklab olish',

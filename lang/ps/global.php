@@ -9,6 +9,8 @@ return [
     'create'                         => 'جوړول',
     'dashboard'                      => 'خورجین',
     'delete'                         => 'ړنګول',
+    'translate'                      => 'ژباړه',
+    'language'                       => 'ژبه',
     'cancel'                         => 'Cancel',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'راکښته کول',

@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Վահանակ',
     'delete'                         => 'Ջնջել',
     'cancel'                         => 'Չեղարկել',
+    'translate'                      => 'ተርጉም።',
+    'language'                       => 'ቋንቋ',
     'clear'                          => 'Մաքրել',
     'downloadFile'                   => 'Ներբեռնել ֆայլը',
     'edit'                           => 'Խմբագրել',

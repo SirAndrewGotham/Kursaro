@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Tableau de bord',
     'delete'                         => 'Supprimer',
     'cancel'                         => 'Annuler',
+    'translate'                      => 'Traduire',
+    'language'                       => 'Langue',
     'clear'                          => 'Effacer',
     'downloadFile'                   => 'Télécharger le fichier',
     'edit'                           => 'Modifier',

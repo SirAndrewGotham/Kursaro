@@ -9,6 +9,8 @@ return [
     'create'                         => 'Δημιουργία',
     'dashboard'                      => 'Πίνακας ελέγχου',
     'delete'                         => 'Διαγραφή',
+    'translate'                      => 'Μεταφράζω',
+    'language'                       => 'Γλώσσα',
     'cancel'                         => 'Άκυρο',
     'clear'                          => 'Καθαρισμός',
     'downloadFile'                   => 'Καταφόρτωση αρχείου',

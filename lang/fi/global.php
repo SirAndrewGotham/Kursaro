@@ -9,6 +9,8 @@ return [
     'create'                         => 'Luo uusi',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Poista',
+    'translate'                      => 'Kääntää',
+    'language'                       => 'Kieli',
     'cancel'                         => 'Cancel',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'Download file',

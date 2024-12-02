@@ -14,7 +14,7 @@ class LanguageController extends Controller
         app()->setLocale($locale);
 
         // Store language into the session
-        session()->put('locale', $locale);
+        session()->put('language', $locale);
 
         return redirect()->back();
     }

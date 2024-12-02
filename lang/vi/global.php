@@ -9,6 +9,8 @@ return [
     'create'                         => 'Tạo',
     'dashboard'                      => 'Bảng điều khiển',
     'delete'                         => 'Xóa',
+    'translate'                      => 'Dịch',
+    'language'                       => 'Ngôn ngữ',
     'cancel'                         => 'Hủy',
     'clear'                          => 'Clear',
     'downloadFile'                   => 'Tải tập tin',

@@ -9,6 +9,8 @@ return [
     'create'                         => 'Үүсгэх',
     'dashboard'                      => 'Хяналтын самбар',
     'delete'                         => 'Устгах',
+    'translate'                      => 'Орчуулах',
+    'language'                       => 'Хэл',
     'cancel'                         => 'Цуцлах',
     'clear'                          => 'Цэвэрлэх',
     'downloadFile'                   => 'Файл татах',

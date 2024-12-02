@@ -9,6 +9,8 @@ return [
     'create'                         => 'Skep',
     'dashboard'                      => 'Paneelbord',
     'delete'                         => 'Uitwis',
+    'translate'                      => 'Vertaal',
+    'language'                       => 'Taal',
     'cancel'                         => 'Kanselleer',
     'clear'                          => 'Verwyder',
     'downloadFile'                   => 'Laai lêer af',

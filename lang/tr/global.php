@@ -9,6 +9,8 @@ return [
     'create'                         => 'Oluştur',
     'dashboard'                      => 'Anasayfa',
     'delete'                         => 'Sil',
+    'translate'                      => 'Çevir',
+    'language'                       => 'Dil',
     'cancel'                         => 'İptal',
     'clear'                          => 'Temizle',
     'downloadFile'                   => 'Dosyayı indir',

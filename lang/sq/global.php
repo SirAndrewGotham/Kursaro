@@ -9,6 +9,8 @@ return [
     'create'                         => 'Krijo',
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Fshi',
+    'translate'                      => 'Përkthejeni',
+    'language'                       => 'Gjuha',
     'cancel'                         => 'Anulo',
     'clear'                          => 'Pastro',
     'downloadFile'                   => 'Shkarko skedar',

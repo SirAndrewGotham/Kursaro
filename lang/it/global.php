@@ -10,6 +10,8 @@ return [
     'dashboard'                      => 'Dashboard',
     'delete'                         => 'Elimina',
     'cancel'                         => 'Annulla',
+    'translate'                      => 'Tradurre',
+    'language'                       => 'Lingua',
     'clear'                          => 'Pulisci',
     'downloadFile'                   => 'Scarica file',
     'edit'                           => 'Modifica',
