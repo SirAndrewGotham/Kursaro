@@ -21,7 +21,7 @@
                         {{ $errors->first('language') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('global.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.home.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="title">{{ trans('back.home.fields.title') }}</label>

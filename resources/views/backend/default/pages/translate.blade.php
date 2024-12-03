@@ -1,31 +1,13 @@
 @extends('backend.default.layouts.app')
-
-@push('styles')
-{{--    <style>--}}
-{{--        .form-control {--}}
-{{--            padding: .6rem .8rem !important;--}}
-{{--            border: 2px solid #ced4da !important;--}}
-{{--            transition: none !important;--}}
-{{--        }--}}
-{{--        select.form-control{--}}
-{{--            height: auto !important;--}}
-{{--            border: 2px solid #ced4da !important;--}}
-{{--            padding: .6rem .8rem calc(.6rem + 1px) .8rem !important;--}}
-{{--        }--}}
-{{--        select.form-control:not([size]):not([multiple]) {--}}
-{{--            height: initial;--}}
-{{--        }--}}
-{{--    </style>--}}
-@endpush
-
 @section('content')
+
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('back.page.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('back.page.title_singular') }}
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.pages.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("admin.pages.translate", [$page->id]) }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="language_id">{{ trans('global.language') }}</label>
@@ -42,8 +24,34 @@
                 <span class="help-block">{{ trans('back.page.fields.language_helper') }}</span>
             </div>
             <div class="form-group">
+                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_active" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $page->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_active">{{ trans('back.page.fields.is_active') }}</label>
+                </div>
+                @if($errors->has('is_active'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('is_active') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('back.page.fields.is_active_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <div class="form-check {{ $errors->has('is_default') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_default" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_default" id="is_default" value="1" {{ $page->is_default || old('is_default', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_default">{{ trans('back.page.fields.is_default') }}</label>
+                </div>
+                @if($errors->has('is_default'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('is_default') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('back.page.fields.is_default_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="title">{{ trans('back.page.fields.title') }}</label>
-                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', '') }}">
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $page->title) }}">
                 @if($errors->has('title'))
                     <div class="invalid-feedback">
                         {{ $errors->first('title') }}
@@ -53,7 +61,7 @@
             </div>
             <div class="form-group">
                 <label for="content">{{ trans('back.page.fields.content') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content') !!}</textarea>
+                <textarea class="form-control ckeditor {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content', $page->content) !!}</textarea>
                 @if($errors->has('content'))
                     <div class="invalid-feedback">
                         {{ $errors->first('content') }}
@@ -61,19 +69,6 @@
                 @endif
                 <span class="help-block">{{ trans('back.page.fields.content_helper') }}</span>
             </div>
-{{--            <div class="form-group">--}}
-{{--                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">--}}
-{{--                    <input type="hidden" name="is_active" value="0">--}}
-{{--                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" {{ old('is_active', 0) === 1 ? 'checked' : '' }}>--}}
-{{--                    <label class="form-check-label" for="is_active">{{ trans('back.page.fields.is_active') }}</label>--}}
-{{--                </div>--}}
-{{--                @if($errors->has('is_active'))--}}
-{{--                    <div class="invalid-feedback">--}}
-{{--                        {{ $errors->first('is_active') }}--}}
-{{--                    </div>--}}
-{{--                @endif--}}
-{{--                <span class="help-block">{{ trans('back.page.fields.is_active_helper') }}</span>--}}
-{{--            </div>--}}
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}

@@ -11,16 +11,16 @@ class PageController extends Controller
     public function __invoke(string $slug)
     {
         $language_id = Language::where('code', app()->getLocale())->first()->id;
-        $default = Page::where([['slug', $slug],['page_id', null]])->first();
-        if($default == null)
+        $parent = Page::where([['slug', $slug],['page_id', null]])->first();
+        if($parent == null)
         {
             return redirect()->route('home')->with('error', trans('Requested page does not exist.'));
         }
-        $page = Page::where([['is_active', true],['page_id', $default->id],['language_id', $language_id]])->first();
+        $page = Page::where([['is_active', true],['page_id', $parent->id],['language_id', $language_id]])->first();
 
-        if($page == null)
+        if(!$page)
         {
-            $page = $default;
+            $page = Page::where([['page_id', $parent->id],['is_default', true]])->first();
         }
 
         return view('frontend.default.home.index', ['content' => $page->content]);

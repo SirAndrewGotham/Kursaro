@@ -87,7 +87,7 @@
                             {{ trans('back.page.fields.slug') }}
                         </th>
                         <td>
-                            {{ $page->parent->slug }}
+                            {{ $page->parent->slug ?? $page->slug }}
                         </td>
                     </tr>
                 </tbody>

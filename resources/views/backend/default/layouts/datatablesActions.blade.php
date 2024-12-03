@@ -17,7 +17,7 @@
     </form>
 {{--@endcan--}}
 @endif
-@if($crudRoutePart == 'homes')
+@if($crudRoutePart == 'homes' || $crudRoutePart == 'pages')
 {{--@can($translateGate)--}}
 <a class="btn btn-xs btn-light" href="{{ route('admin.' . $crudRoutePart . '.translate', $row->id) }}">
     {{ trans('global.translate') }}

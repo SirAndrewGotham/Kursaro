@@ -12,6 +12,7 @@
     @include('backend.default.layouts.styles-local')
 
     <link href="{{ asset('assets/backend/default/css/custom.css') }}" rel="stylesheet" />
+    @stack('styles')
     @yield('styles')
 </head>
 
@@ -85,8 +86,6 @@
 {{--@include('backend.default.layouts.scripts-cdn')--}}
 @include('backend.default.layouts.scripts-local')
 
-<script src="{{ asset('assets/backend/default/js/tailwind3.4.15.js') }}"></script>
-<script src="{{ asset('assets/backend/default/js/alpine3.min.js') }}"></script>
 <script src="{{ asset('assets/backend/default/js/main.js') }}"></script>
 <script>
     $(function() {

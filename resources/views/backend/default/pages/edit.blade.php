@@ -11,18 +11,21 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="language_id">{{ trans('back.page.fields.language') }}</label>
-                <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
-                    @foreach($languages as $language)
-                        <option value="{{ $language->id }}" {{ (old('language_id') ? old('language_id') : $page->language_id ?? '') == $language->id ? 'selected' : '' }}>{{ $language->english }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('language'))
+                <label for="language_id">{{ trans('back.page.fields.language') }}:</label>
+                {{ $page->language->english }}
+            </div>
+            <div class="form-group">
+                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_active" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $page->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_active">{{ trans('back.page.fields.is_active') }}</label>
+                </div>
+                @if($errors->has('is_active'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('language') }}
+                        {{ $errors->first('is_active') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('back.page.fields.language_helper') }}</span>
+                <span class="help-block">{{ trans('back.page.fields.is_active_helper') }}</span>
             </div>
             <div class="form-group">
                 <div class="form-check {{ $errors->has('is_default') ? 'is-invalid' : '' }}">
@@ -56,19 +59,6 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('back.page.fields.content_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="is_active" value="0">
-                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $page->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="is_active">{{ trans('back.page.fields.is_active') }}</label>
-                </div>
-                @if($errors->has('is_active'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('is_active') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('back.page.fields.is_active_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

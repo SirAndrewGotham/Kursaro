@@ -65,6 +65,8 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::post('pages/ckmedia', [PageController::class, 'storeCKEditorImages'])->name('pages.storeCKEditorImages');
     Route::post('pages/parse-csv-import', [PageController::class, 'parseCsvImport'])->name('pages.parseCsvImport');
     Route::post('pages/process-csv-import', [PageController::class, 'processCsvImport'])->name('pages.processCsvImport');
+    Route::get('pages/{page}/translate', [PageController::class, 'translate'])->name('pages.translate');
+    Route::post('pages/{page}/translate', [PageController::class, 'storeTranslation'])->name('pages.translate');
     Route::resource('pages', PageController::class);
 
     // Home
