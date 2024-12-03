@@ -107,13 +107,13 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="user_courses">
-            @includeIf('admin.users.relationships.userCourses', ['courses' => $user->userCourses])
+            @includeIf('backend.default.users.relationships.userCourses', ['courses' => $user->userCourses])
         </div>
         <div class="tab-pane" role="tabpanel" id="user_feedbacks">
-            @includeIf('admin.users.relationships.userFeedbacks', ['feedbacks' => $user->userFeedbacks])
+            @includeIf('backend.default.users.relationships.userFeedbacks', ['feedbacks' => $user->userFeedbacks])
         </div>
         <div class="tab-pane" role="tabpanel" id="user_prospects">
-            @includeIf('admin.users.relationships.userProspects', ['prospects' => $user->userProspects])
+            @includeIf('backend.default.users.relationships.userProspects', ['prospects' => $user->userProspects])
         </div>
     </div>
 </div>

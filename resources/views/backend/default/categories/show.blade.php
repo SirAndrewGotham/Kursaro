@@ -101,13 +101,13 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="category_categories">
-            @includeIf('admin.categories.relationships.categoryCategories', ['categories' => $category->categoryCategories])
+            @includeIf('backend.default.categories.relationships.categoryCategories', ['categories' => $category->categoryCategories])
         </div>
         <div class="tab-pane" role="tabpanel" id="category_courses">
-            @includeIf('admin.categories.relationships.categoryCourses', ['courses' => $category->categoryCourses])
+            @includeIf('backend.default.categories.relationships.categoryCourses', ['courses' => $category->categoryCourses])
         </div>
         <div class="tab-pane" role="tabpanel" id="category_prospects">
-            @includeIf('admin.categories.relationships.categoryProspects', ['prospects' => $category->categoryProspects])
+            @includeIf('backend.default.categories.relationships.categoryProspects', ['prospects' => $category->categoryProspects])
         </div>
     </div>
 </div>

@@ -71,7 +71,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="banner_type_banners">
-            @includeIf('admin.bannerTypes.relationships.bannerTypeBanners', ['banners' => $bannerType->bannerTypeBanners])
+            @includeIf('backend.default.bannerTypes.relationships.bannerTypeBanners', ['banners' => $bannerType->bannerTypeBanners])
         </div>
     </div>
 </div>

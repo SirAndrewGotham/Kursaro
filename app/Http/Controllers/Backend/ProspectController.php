@@ -28,7 +28,8 @@ class ProspectController extends Controller
 //        abort_if(Gate::denies('prospect_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Prospect::with(['course', 'user', 'language', 'categories'])->select(sprintf('%s.*', (new Prospect)->table));
+//            $query = Prospect::with(['course', 'user', 'language', 'categories'])->select(sprintf('%s.*', (new Prospect)->table));
+            $query = Prospect::select(sprintf('%s.*', (new Prospect)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');

@@ -31,9 +31,9 @@
                     <th>
                         {{ trans('back.page.fields.title') }}
                     </th>
-                    <th>
-                        {{ trans('back.page.fields.views') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.page.fields.views') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.page.fields.page') }}
                     </th>
@@ -50,10 +50,11 @@
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
-                    <td>
+{{--                    <td>--}}
 {{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
-                    </td>
+{{--                    </td>--}}
                     <td>
+                        {{ trans('back.page.fields.language') }}
 {{--                        <select class="search">--}}
 {{--                            <option value>{{ trans('global.all') }}</option>--}}
 {{--                            @foreach($pages as $key => $item)--}}
@@ -118,7 +119,7 @@
         { data: 'placeholder', name: 'placeholder' },
         // { data: 'id', name: 'id' },
         { data: 'title', name: 'title' },
-        { data: 'views', name: 'views' },
+        // { data: 'views', name: 'views' },
         { data: 'page_title', name: 'page.title' },
         { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

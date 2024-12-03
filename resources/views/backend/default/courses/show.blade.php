@@ -156,10 +156,10 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="course_courses">
-            @includeIf('admin.courses.relationships.courseCourses', ['courses' => $course->courseCourses])
+            @includeIf('backend.default.courses.relationships.courseCourses', ['courses' => $course->courseCourses])
         </div>
         <div class="tab-pane" role="tabpanel" id="course_prospects">
-            @includeIf('admin.courses.relationships.courseProspects', ['prospects' => $course->courseProspects])
+            @includeIf('backend.default.courses.relationships.courseProspects', ['prospects' => $course->courseProspects])
         </div>
     </div>
 </div>

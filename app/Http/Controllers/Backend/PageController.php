@@ -52,9 +52,9 @@ class PageController extends Controller
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
-            $table->editColumn('views', function ($row) {
-                return $row->views ? $row->views : '';
-            });
+//            $table->editColumn('views', function ($row) {
+//                return $row->views ? $row->views : '';
+//            });
 
             // todo: get available translations and show language flags for them in the following filed
             $table->addColumn('page_title', function ($row) {
@@ -114,7 +114,7 @@ class PageController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $page->id]);
         }
 
-        return redirect()->route('admin.pages.index')->with('message', 'New page created successfully');
+        return redirect()->route('admin.pages.show', $page_id)->with('message', 'New page created successfully');
     }
 
     public function storeTranslation(StorePageRequest $request, Page $page)
@@ -148,7 +148,6 @@ class PageController extends Controller
         {
             // reset old default status
             // just in case if there were errors in code, check multiple
-//            $olds = Page::where(['page_id' => $page_id, 'is_default', true])->get();
             $olds = Page::where(['page_id' => $page_id])->get();
             foreach($olds as $old)
             {
@@ -172,7 +171,7 @@ class PageController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $page->id]);
         }
 
-        return redirect()->route('admin.pages.index')->with('message', 'New page created successfully');
+        return redirect()->route('admin.pages.show', $page->page_id)->with('message', 'Translation created successfully');
     }
 
     public function edit(Page $page)
@@ -190,21 +189,34 @@ class PageController extends Controller
     public function update(UpdatePageRequest $request, Page $page)
     {
         $message = 'Changes saved successfully';
-        $default_status = $request->is_default;
-        $active_status = $request->is_active;
+        $default_status = $request->input('is_default');
+        $active_status = $request->input('is_active');
 
         if($page->is_default && !$request->is_default)
         {
             $default_status = true;
             $active_status = true;
-            $message = 'Changes saved successfully, but default status. Please edit page version in the desired language making it default, if you want another page to be shown as default one.';
+            $message = 'Changes saved successfully, but default status. Please edit page version in the desired language making it default, if you want another page to be shown as the default one.';
         }
 
         if($page->is_default && !$request->is_active)
         {
             $default_status = true;
             $active_status = true;
-            $message = 'Changes saved successfully, but its availability status. Default page can not be made inactive.';
+            $message = 'Changes saved successfully, but its availability status. Default page can not be set inactive.';
+        }
+
+        if(!$page->is_default && $request->input('is_default'))
+        {
+            // reset old default status
+            // just in case if there were errors in code, check multiple
+            $olds = Page::where(['page_id' => $page->page_id])->get();
+            foreach($olds as $old)
+            {
+                $old->update(['is_default'=>false]);
+            }
+            $default_status = true;
+            $active_status = true;
         }
 
         $page->update([
@@ -219,7 +231,7 @@ class PageController extends Controller
             'updated_at' => now(),
         ]);
 
-        return redirect()->route('admin.pages.index')->with('message', $message);
+        return redirect()->route('admin.pages.show', $page->page_id)->with('message', $message);
     }
 
     public function show(Page $page)
@@ -235,6 +247,11 @@ class PageController extends Controller
     {
 //        abort_if(Gate::denies('page_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
+        if($page->is_default)
+        {
+            return redirect()->route('admin.pages.show', $page->page_id)->with('message', 'You can not delete default page without making another one default first. Please make another page default, and try again.');
+        }
+
         $page->delete();
 
         return back();
@@ -242,6 +259,16 @@ class PageController extends Controller
 
     public function massDestroy(MassDestroyPageRequest $request)
     {
+//        // exclude default id from mass deletion
+//        $default = Page::where('is_default', true)->first();
+//        // Retrieve the array from the request
+//        $array = request('ids');
+//        // Remove elements from the array (example: remove elements with specific values)
+//        $array = array_diff($array, [$default->id]);
+//        // Update the request with the modified array
+//        request()->merge(['ids' => $array]);
+
+        // prepare collection of pages with selected ids, but default page id
         $pages = Page::find(request('ids'));
 
         foreach ($pages as $page) {

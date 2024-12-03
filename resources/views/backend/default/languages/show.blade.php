@@ -122,54 +122,54 @@
     </div>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.relatedData') }}
-    </div>
-    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#language_homes" role="tab" data-toggle="tab">
-                {{ trans('back.home.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#language_categories" role="tab" data-toggle="tab">
-                {{ trans('back.category.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#language_courses" role="tab" data-toggle="tab">
-                {{ trans('back.course.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#language_prospects" role="tab" data-toggle="tab">
-                {{ trans('back.prospect.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#language_banners" role="tab" data-toggle="tab">
-                {{ trans('back.banner.title') }}
-            </a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="language_homes">
-            @includeIf('admin.languages.relationships.languageHomes', ['homes' => $language->languageHomes])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="language_categories">
-            @includeIf('admin.languages.relationships.languageCategories', ['categories' => $language->languageCategories])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="language_courses">
-            @includeIf('admin.languages.relationships.languageCourses', ['courses' => $language->languageCourses])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="language_prospects">
-            @includeIf('admin.languages.relationships.languageProspects', ['prospects' => $language->languageProspects])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="language_banners">
-            @includeIf('admin.languages.relationships.languageBanners', ['banners' => $language->languageBanners])
-        </div>
-    </div>
-</div>
+{{--<div class="card">--}}
+{{--    <div class="card-header">--}}
+{{--        {{ trans('global.relatedData') }}--}}
+{{--    </div>--}}
+{{--    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#language_homes" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.home.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#language_categories" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.category.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#language_courses" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.course.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#language_prospects" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.prospect.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#language_banners" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.banner.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--    </ul>--}}
+{{--    <div class="tab-content">--}}
+{{--        <div class="tab-pane" role="tabpanel" id="language_homes">--}}
+{{--            @includeIf('backend.default.languages.relationships.languageHomes', ['homes' => $language->languageHomes])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="language_categories">--}}
+{{--            @includeIf('backend.default.languages.relationships.languageCategories', ['categories' => $language->languageCategories])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="language_courses">--}}
+{{--            @includeIf('backend.default.languages.relationships.languageCourses', ['courses' => $language->languageCourses])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="language_prospects">--}}
+{{--            @includeIf('backend.default.languages.relationships.languageProspects', ['prospects' => $language->languageProspects])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="language_banners">--}}
+{{--            @includeIf('backend.default.languages.relationships.languageBanners', ['banners' => $language->languageBanners])--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 @endsection

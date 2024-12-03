@@ -1,8 +1,8 @@
 {{--@can('page_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.pages.create') }}">
-                {{ trans('global.add') }} {{ trans('back.page.title_singular') }}
+            <a class="btn btn-success" href="{{ route('admin.pages.translate', $page->id) }}">
+                {{ trans('global.add') }} {{ trans('back.page.fields.translation') }}
             </a>
         </div>
     </div>
@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('back.page.title_singular') }} {{ trans('global.list') }}
+        {{ trans('back.page.fields.translations') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
@@ -21,17 +21,23 @@
                         <th width="10">
 
                         </th>
-                        <th>
-                            {{ trans('back.page.fields.id') }}
-                        </th>
+{{--                        <th>--}}
+{{--                            {{ trans('back.page.fields.id') }}--}}
+{{--                        </th>--}}
                         <th>
                             {{ trans('back.page.fields.title') }}
                         </th>
+{{--                        <th>--}}
+{{--                            {{ trans('back.page.fields.views') }}--}}
+{{--                        </th>--}}
                         <th>
-                            {{ trans('back.page.fields.views') }}
+                            {{ trans('back.page.fields.language') }}
                         </th>
                         <th>
-                            {{ trans('back.page.fields.page') }}
+                            {{-- Default statis --}}
+                        </th>
+                        <th>
+                            {{-- Enabled statis --}}
                         </th>
                         <th>
                             &nbsp;
@@ -39,22 +45,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($pages as $key => $page)
+                    @foreach($page->translations as $key => $page)
                         <tr data-entry-id="{{ $page->id }}">
                             <td>
 
                             </td>
-                            <td>
-                                {{ $page->id ?? '' }}
-                            </td>
+{{--                            <td>--}}
+{{--                                {{ $page->id ?? '' }}--}}
+{{--                            </td>--}}
                             <td>
                                 {{ $page->title ?? '' }}
                             </td>
+{{--                            <td>--}}
+{{--                                {{ $page->views ?? '' }}--}}
+{{--                            </td>--}}
                             <td>
-                                {{ $page->views ?? '' }}
+                                @if(file_exists(public_path('assets/flags/'.$page->language->code.'.svg')))
+                                    <span class="mr-2">
+                                        <svg height="24px" width="24px" style="border-radius: 50%;background: #73AD21;">
+                                            {!! file_get_contents(public_path('assets/flags/'.$page->language->code.'.svg')) !!}
+                                        </svg>
+                                    </span>
+                                @endif
+                                {{ $page->language->name ?? '' }} ({{ $page->language->code }})
                             </td>
                             <td>
-                                {{ $page->page->title ?? '' }}
+                                @if($page->is_default)
+                                    {{ trans('back.page.fields.is_default') }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(!$page->is_active)
+                                    {{ trans('Disabled') }}
+                                @endif
                             </td>
                             <td>
 {{--                                @can('page_show')--}}
@@ -77,6 +100,11 @@
                                     </form>
 {{--                                @endcan--}}
 
+                                {{-- @can('page_edit')--}}
+                                <a class="btn btn-xs btn-light" href="{{ route('admin.pages.translate', $page->id) }}">
+                                    {{ trans('global.translate') }}
+                                </a>
+                                {{-- @endcan--}}
                             </td>
 
                         </tr>

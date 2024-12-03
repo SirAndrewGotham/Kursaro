@@ -3,11 +3,13 @@
         {{ trans('global.view') }}
     </a>
 {{--@endcan--}}
+@if(!$crudRoutePart == 'pages')
 {{--@can($editGate)--}}
     <a class="btn btn-xs btn-info" href="{{ route('admin.' . $crudRoutePart . '.edit', $row->id) }}">
         {{ trans('global.edit') }}
     </a>
 {{--@endcan--}}
+@endif
 @if(!$crudRoutePart == 'pages')
 {{--@can($deleteGate)--}}
     <form action="{{ route('admin.' . $crudRoutePart . '.destroy', $row->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">

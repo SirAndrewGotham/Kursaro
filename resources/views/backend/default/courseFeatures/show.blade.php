@@ -71,7 +71,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="feature_course_features">
-            @includeIf('admin.courseFeatures.relationships.featureCourseFeatures', ['courseFeatures' => $courseFeature->featureCourseFeatures])
+            @includeIf('backend.default.courseFeatures.relationships.featureCourseFeatures', ['courseFeatures' => $courseFeature->featureCourseFeatures])
         </div>
     </div>
 </div>

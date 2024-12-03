@@ -71,7 +71,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="banner_spot_banners">
-            @includeIf('admin.bannerSpots.relationships.bannerSpotBanners', ['banners' => $bannerSpot->bannerSpotBanners])
+            @includeIf('backend.default.bannerSpots.relationships.bannerSpotBanners', ['banners' => $bannerSpot->bannerSpotBanners])
         </div>
     </div>
 </div>

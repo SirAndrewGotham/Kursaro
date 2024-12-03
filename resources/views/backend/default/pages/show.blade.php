@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('back.page.title') }}
+        {{ trans('global.show') }} {{ trans('back.page.title_singular') }} <span class="h4 ml-3">{{ $page->title }}</span>
     </div>
 
     <div class="card-body">
@@ -15,14 +15,15 @@
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
-                    <tr>
-                        <th>
-                            {{ trans('back.page.fields.id') }}
-                        </th>
-                        <td>
-                            {{ $page->id }}
-                        </td>
-                    </tr>
+{{--                    <tr>--}}
+{{--                        <th>--}}
+{{--                            {{ trans('back.page.fields.id') }}--}}
+{{--                        </th>--}}
+{{--                        <td>--}}
+{{--                            {{ $page->id }}--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+                    @if($page->page_id)
                     <tr>
                         <th>
                             {{ trans('back.page.fields.is_default') }}
@@ -82,6 +83,7 @@
                             {{ $page->views }}
                         </td>
                     </tr>
+                    @endif
                     <tr>
                         <th>
                             {{ trans('back.page.fields.slug') }}
@@ -92,23 +94,19 @@
                     </tr>
                 </tbody>
             </table>
+
+            @if(\App\Models\Page::where('page_id', $page->id)->first())
             <div class="card">
-                <div class="card-header">
-                    {{ trans('back.page.fields.translations') }}
+                <div class="card-header mb-2">
+                    <h3>{{ trans('back.page.fields.translations') }}
+                        <i class="fa-fw fas fa-arrow-alt-circle-down"></i>
+                    </h3>
                 </div>
-                <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#page_pages" role="tab" data-toggle="tab">
-                            {{ trans('back.page.title') }}
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content">
                     <div class="tab-pane" role="tabpanel" id="page_pages">
-                        @includeIf('admin.pages.relationships.translations', ['pages' => $page->translations])
+                        @includeIf('backend.default.pages.relationships.translations', ['pages' => $page->translations])
                     </div>
-                </div>
             </div>
+            @endif
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.pages.index') }}">
                     {{ trans('global.back_to_list') }}
