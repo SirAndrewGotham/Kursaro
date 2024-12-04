@@ -12,7 +12,7 @@
             @csrf
             <div class="form-group">
                 <div class="form-check {{ $errors->has('default') ? 'is-invalid' : '' }}">
-                    <input class="form-check-input" type="checkbox" name="default" id="default" value="1" {{ $language->default || old('default', 0) === 1 ? 'checked' : '' }} required>
+                    <input class="form-check-input" type="checkbox" name="default" id="default" value="1" {{ $language->default || old('default', 0) === 1 ? 'checked' : '' }}>
                     <label class="required form-check-label" for="default">{{ trans('back.language.fields.default') }}</label>
                 </div>
                 @if($errors->has('default'))
@@ -106,27 +106,27 @@
                 <span class="help-block">{{ trans('back.language.fields.english_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('available') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="available" value="0">
-                    <input class="form-check-input" type="checkbox" name="available" id="available" value="1" {{ $language->available || old('available', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="available">{{ trans('back.language.fields.available') }}</label>
+                <div class="form-check {{ $errors->has('is_available') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_available" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_available" id="is_available" value="1" {{ $language->is_available || old('is_available', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_available">{{ trans('back.language.fields.available') }}</label>
                 </div>
-                @if($errors->has('available'))
+                @if($errors->has('is_available'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('available') }}
+                        {{ $errors->first('is_available') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('back.language.fields.available_helper') }}</span>
             </div>
             <div class="form-group">
-                <div class="form-check {{ $errors->has('active') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="active" value="0">
-                    <input class="form-check-input" type="checkbox" name="active" id="active" value="1" {{ $language->active || old('active', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="active">{{ trans('back.language.fields.active') }}</label>
+                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="is_active" value="0">
+                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $language->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="is_active">{{ trans('back.language.fields.active') }}</label>
                 </div>
-                @if($errors->has('active'))
+                @if($errors->has('is_active'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('active') }}
+                        {{ $errors->first('is_active') }}
                     </div>
                 @endif
                 <span class="help-block">{{ trans('back.language.fields.active_helper') }}</span>

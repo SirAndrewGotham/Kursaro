@@ -45,9 +45,9 @@ class UsersController extends Controller
                 ));
             });
 
-            $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : '';
-            });
+//            $table->editColumn('id', function ($row) {
+//                return $row->id ? $row->id : '';
+//            });
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
             });
@@ -55,24 +55,24 @@ class UsersController extends Controller
                 return $row->email ? $row->email : '';
             });
 
-            $table->editColumn('two_factor', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->two_factor ? 'checked' : null) . '>';
-            });
-            $table->editColumn('roles', function ($row) {
-                $labels = [];
-                foreach ($row->roles as $role) {
-                    $labels[] = sprintf('<span class="label label-info label-many">%s</span>', $role->title);
-                }
-
-                return implode(' ', $labels);
-            });
-            $table->addColumn('language_english', function ($row) {
-                return $row->language ? $row->language->english : '';
-            });
-
-            $table->editColumn('language.name', function ($row) {
-                return $row->language ? (is_string($row->language) ? $row->language : $row->language->name) : '';
-            });
+//            $table->editColumn('two_factor', function ($row) {
+//                return '<input type="checkbox" disabled ' . ($row->two_factor ? 'checked' : null) . '>';
+//            });
+//            $table->editColumn('roles', function ($row) {
+//                $labels = [];
+//                foreach ($row->roles as $role) {
+//                    $labels[] = sprintf('<span class="label label-info label-many">%s</span>', $role->title);
+//                }
+//
+//                return implode(' ', $labels);
+//            });
+//            $table->addColumn('language_english', function ($row) {
+//                return $row->language ? $row->language->english : '';
+//            });
+//
+//            $table->editColumn('language.name', function ($row) {
+//                return $row->language ? (is_string($row->language) ? $row->language : $row->language->name) : '';
+//            });
 
             $table->rawColumns(['actions', 'placeholder', 'two_factor', 'roles', 'language']);
 
@@ -129,7 +129,7 @@ class UsersController extends Controller
     {
 //        abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $user->load('roles', 'language', 'userCourses', 'userFeedbacks', 'userProspects');
+//        $user->load('roles', 'language', 'userCourses', 'userFeedbacks', 'userProspects');
 
         return view('backend.default.users.show', compact('user'));
     }
@@ -137,6 +137,11 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
 //        abort_if(Gate::denies('user_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        if($user->id == 1)
+        {
+            return redirect()->route('admin.users.index')->with('message', 'You can not delete this user');
+        }
 
         $user->delete();
 

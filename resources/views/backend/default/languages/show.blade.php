@@ -100,7 +100,7 @@
                             {{ trans('back.language.fields.available') }}
                         </th>
                         <td>
-                            <input type="checkbox" disabled="disabled" {{ $language->available ? 'checked' : '' }}>
+                            <input type="checkbox" disabled="disabled" {{ $language->is_available ? 'checked' : '' }}>
                         </td>
                     </tr>
                     <tr>
@@ -108,7 +108,7 @@
                             {{ trans('back.language.fields.active') }}
                         </th>
                         <td>
-                            <input type="checkbox" disabled="disabled" {{ $language->active ? 'checked' : '' }}>
+                            <input type="checkbox" disabled="disabled" {{ $language->is_active ? 'checked' : '' }}>
                         </td>
                     </tr>
                 </tbody>

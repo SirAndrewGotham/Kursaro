@@ -25,30 +25,30 @@
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.user.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.user.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.user.fields.name') }}
                     </th>
                     <th>
                         {{ trans('back.user.fields.email') }}
                     </th>
-                    <th>
-                        {{ trans('back.user.fields.email_verified_at') }}
-                    </th>
-                    <th>
-                        {{ trans('back.user.fields.two_factor') }}
-                    </th>
-                    <th>
-                        {{ trans('back.user.fields.roles') }}
-                    </th>
-                    <th>
-                        {{ trans('back.user.fields.language') }}
-                    </th>
-                    <th>
-                        {{ trans('back.language.fields.name') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.user.fields.email_verified_at') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.user.fields.two_factor') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.user.fields.roles') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.user.fields.language') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.name') }}--}}
+{{--                    </th>--}}
                     <th>
                         &nbsp;
                     </th>
@@ -56,38 +56,38 @@
                 <tr>
                     <td>
                     </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        <select class="search">
-                            <option value>{{ trans('global.all') }}</option>
-                            @foreach($roles as $key => $item)
-                                <option value="{{ $item->title }}">{{ $item->title }}</option>
-                            @endforeach
-                        </select>
-                    </td>
-                    <td>
-                        <select class="search">
-                            <option value>{{ trans('global.all') }}</option>
-                            @foreach($languages as $key => $item)
-                                <option value="{{ $item->english }}">{{ $item->english }}</option>
-                            @endforeach
-                        </select>
-                    </td>
-                    <td>
-                    </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                        <select class="search">--}}
+{{--                            <option value>{{ trans('global.all') }}</option>--}}
+{{--                            @foreach($roles as $key => $item)--}}
+{{--                                <option value="{{ $item->title }}">{{ $item->title }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                        <select class="search">--}}
+{{--                            <option value>{{ trans('global.all') }}</option>--}}
+{{--                            @foreach($languages as $key => $item)--}}
+{{--                                <option value="{{ $item->english }}">{{ $item->english }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                    </td>--}}
                     <td>
                     </td>
                 </tr>
@@ -143,14 +143,14 @@
     ajax: "{{ route('admin.users.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
+// { data: 'id', name: 'id' },
 { data: 'name', name: 'name' },
 { data: 'email', name: 'email' },
-{ data: 'email_verified_at', name: 'email_verified_at' },
-{ data: 'two_factor', name: 'two_factor' },
-{ data: 'roles', name: 'roles.title' },
-{ data: 'language_english', name: 'language.english' },
-{ data: 'language.name', name: 'language.name' },
+// { data: 'email_verified_at', name: 'email_verified_at' },
+// { data: 'two_factor', name: 'two_factor' },
+// { data: 'roles', name: 'roles.title' },
+// { data: 'language_english', name: 'language.english' },
+// { data: 'language.name', name: 'language.name' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

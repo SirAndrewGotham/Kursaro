@@ -27,6 +27,11 @@
         <button class="c-header-toggler mfs-3 d-md-down-none" type="button" responsive="true">
             <i class="fas fa-fw fa-bars"></i>
         </button>
+        <div class="c-header-nav ml-auto">
+            <a class="c-header-nav-link" href="{{ route('home') }}">
+                {{ trans('Site') }}
+            </a>
+        </div>
         <ul class="c-header-nav ml-auto">
 {{--            @include('backend.default.layouts.languageSwitcher')--}}
             @if(count(App\Models\Language::where('is_active', true)->get()) > 1)

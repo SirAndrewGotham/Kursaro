@@ -19,9 +19,9 @@ class UpdateLanguageRequest extends FormRequest
     public function rules()
     {
         return [
-            'default' => [
-                'required',
-            ],
+//            'default' => [
+//                'required',
+//            ],
             'code' => [
                 'string',
                 'min:2',

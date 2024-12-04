@@ -84,38 +84,38 @@
     </div>
 </div>
 
-<div class="card">
-    <div class="card-header">
-        {{ trans('global.relatedData') }}
-    </div>
-    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#user_courses" role="tab" data-toggle="tab">
-                {{ trans('back.course.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#user_feedbacks" role="tab" data-toggle="tab">
-                {{ trans('back.feedback.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#user_prospects" role="tab" data-toggle="tab">
-                {{ trans('back.prospect.title') }}
-            </a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="user_courses">
-            @includeIf('backend.default.users.relationships.userCourses', ['courses' => $user->userCourses])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="user_feedbacks">
-            @includeIf('backend.default.users.relationships.userFeedbacks', ['feedbacks' => $user->userFeedbacks])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="user_prospects">
-            @includeIf('backend.default.users.relationships.userProspects', ['prospects' => $user->userProspects])
-        </div>
-    </div>
-</div>
+{{--<div class="card">--}}
+{{--    <div class="card-header">--}}
+{{--        {{ trans('global.relatedData') }}--}}
+{{--    </div>--}}
+{{--    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#user_courses" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.course.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#user_feedbacks" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.feedback.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="#user_prospects" role="tab" data-toggle="tab">--}}
+{{--                {{ trans('back.prospect.title') }}--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--    </ul>--}}
+{{--    <div class="tab-content">--}}
+{{--        <div class="tab-pane" role="tabpanel" id="user_courses">--}}
+{{--            @includeIf('backend.default.users.relationships.userCourses', ['courses' => $user->userCourses])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="user_feedbacks">--}}
+{{--            @includeIf('backend.default.users.relationships.userFeedbacks', ['feedbacks' => $user->userFeedbacks])--}}
+{{--        </div>--}}
+{{--        <div class="tab-pane" role="tabpanel" id="user_prospects">--}}
+{{--            @includeIf('backend.default.users.relationships.userProspects', ['prospects' => $user->userProspects])--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 @endsection

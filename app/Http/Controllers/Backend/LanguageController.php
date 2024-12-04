@@ -43,30 +43,30 @@ class LanguageController extends Controller
                 ));
             });
 
-            $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : '';
-            });
+//            $table->editColumn('id', function ($row) {
+//                return $row->id ? $row->id : '';
+//            });
             $table->editColumn('default', function ($row) {
                 return '<input type="checkbox" disabled ' . ($row->default ? 'checked' : null) . '>';
             });
-            $table->editColumn('fallback', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->fallback ? 'checked' : null) . '>';
-            });
+//            $table->editColumn('fallback', function ($row) {
+//                return '<input type="checkbox" disabled ' . ($row->fallback ? 'checked' : null) . '>';
+//            });
             $table->editColumn('code', function ($row) {
                 return $row->code ? $row->code : '';
             });
-            $table->editColumn('regional', function ($row) {
-                return $row->regional ? $row->regional : '';
-            });
-            $table->editColumn('script', function ($row) {
-                return $row->script ? $row->script : '';
-            });
-            $table->editColumn('dir', function ($row) {
-                return $row->dir ? $row->dir : '';
-            });
-            $table->editColumn('flag', function ($row) {
-                return $row->flag ? $row->flag : '';
-            });
+//            $table->editColumn('regional', function ($row) {
+//                return $row->regional ? $row->regional : '';
+//            });
+//            $table->editColumn('script', function ($row) {
+//                return $row->script ? $row->script : '';
+//            });
+//            $table->editColumn('dir', function ($row) {
+//                return $row->dir ? $row->dir : '';
+//            });
+//            $table->editColumn('flag', function ($row) {
+//                return $row->flag ? $row->flag : '';
+//            });
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
             });
@@ -74,13 +74,14 @@ class LanguageController extends Controller
                 return $row->english ? $row->english : '';
             });
             $table->editColumn('available', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->available ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled ' . ($row->is_available ? 'checked' : null) . '>';
             });
             $table->editColumn('active', function ($row) {
-                return '<input type="checkbox" disabled ' . ($row->active ? 'checked' : null) . '>';
+                return '<input type="checkbox" disabled ' . ($row->is_active ? 'checked' : null) . '>';
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'default', 'fallback', 'available', 'active']);
+//            $table->rawColumns(['actions', 'placeholder', 'default', 'fallback', 'available', 'active']);
+            $table->rawColumns(['placeholder', 'default', 'code', 'name', 'english', 'available', 'active', 'actions']);
 
             return $table->make(true);
         }
@@ -120,7 +121,7 @@ class LanguageController extends Controller
     {
 //        abort_if(Gate::denies('language_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $language->load('languageHomes', 'languageCategories', 'languageCourses', 'languageProspects', 'languageBanners');
+//        $language->load('languageHomes', 'languageCategories', 'languageCourses', 'languageProspects', 'languageBanners');
 
         return view('backend.default.languages.show', compact('language'));
     }

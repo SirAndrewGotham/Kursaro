@@ -25,30 +25,30 @@
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.language.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.language.fields.default') }}
                     </th>
-                    <th>
-                        {{ trans('back.language.fields.fallback') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.fallback') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.language.fields.code') }}
                     </th>
-                    <th>
-                        {{ trans('back.language.fields.regional') }}
-                    </th>
-                    <th>
-                        {{ trans('back.language.fields.script') }}
-                    </th>
-                    <th>
-                        {{ trans('back.language.fields.dir') }}
-                    </th>
-                    <th>
-                        {{ trans('back.language.fields.flag') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.regional') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.script') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.dir') }}--}}
+{{--                    </th>--}}
+{{--                    <th>--}}
+{{--                        {{ trans('back.language.fields.flag') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.language.fields.name') }}
                     </th>
@@ -68,40 +68,40 @@
                 <tr>
                     <td>
                     </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
+                    <td>
+                    </td>
+{{--                    <td>--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
+                    <td>
+                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                    </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
                     </td>
                     <td>
                     </td>
                     <td>
                     </td>
-                    <td>
-                    </td>
+{{--                    <td>--}}
+{{--                    </td>--}}
                 </tr>
             </thead>
         </table>
@@ -154,23 +154,23 @@
     aaSorting: [],
     ajax: "{{ route('admin.languages.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'default', name: 'default' },
-{ data: 'fallback', name: 'fallback' },
-{ data: 'code', name: 'code' },
-{ data: 'regional', name: 'regional' },
-{ data: 'script', name: 'script' },
-{ data: 'dir', name: 'dir' },
-{ data: 'flag', name: 'flag' },
-{ data: 'name', name: 'name' },
-{ data: 'english', name: 'english' },
-{ data: 'available', name: 'available' },
-{ data: 'active', name: 'active' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        // { data: 'id', name: 'id' },
+        { data: 'default', name: 'default' },
+        // { data: 'fallback', name: 'fallback' },
+        { data: 'code', name: 'code' },
+        // { data: 'regional', name: 'regional' },
+        // { data: 'script', name: 'script' },
+        // { data: 'dir', name: 'dir' },
+        // { data: 'flag', name: 'flag' },
+        { data: 'name', name: 'name' },
+        { data: 'english', name: 'english' },
+        { data: 'available', name: 'available' },
+        { data: 'active', name: 'active' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
-    order: [[ 1, 'desc' ]],
+    order: [[ 7, 'desc' ]],
     pageLength: 100,
   };
   let table = $('.datatable-Language').DataTable(dtOverrideGlobals);
