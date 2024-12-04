@@ -71,8 +71,9 @@
                             </svg>
                       </span>
                     </label>
+                    @if(count(App\Models\Language::where('is_active', true)->get()) > 1)
                     <div class="hidden sm:flex px-4">
-                        @include('frontend.default.layouts.languageSwitcher')
+                            @include('frontend.default.layouts.languageSwitcher')
 {{--                        <a href="{{ route('login') }}"--}}
 {{--                           class="loginBtn py-2 px-[22px] text-base font-medium text-dark dark:text-white hover:opacity-70">--}}
 {{--                            [ Language switcher ]--}}
@@ -84,6 +85,7 @@
                         {{--                            Sign Up--}}
                         {{--                        </a>--}}
                     </div>
+                    @endif
                 </div>
             </div>
             {{--// Right Part --}}
