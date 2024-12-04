@@ -1,4 +1,4 @@
-{{--@can('feedback_create')--}}
+@can('feedback_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.feedbacks.create') }}">
@@ -6,7 +6,7 @@
             </a>
         </div>
     </div>
-{{--@endcan--}}
+@endcan
 
 <div class="card">
     <div class="card-header">

@@ -22,7 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
 //        $middleware->authenticateSessions();
-//        $middleware->prependToGroup('web', AuthGates::class);
+        $middleware->prependToGroup('web', AuthGates::class);
 
         $middleware->appendToGroup('web', SetLocale::class);
         $middleware->appendToGroup('web', ShareErrorsFromSession::class);

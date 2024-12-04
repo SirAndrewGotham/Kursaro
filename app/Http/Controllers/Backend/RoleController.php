@@ -44,9 +44,9 @@ class RoleController extends Controller
                 ));
             });
 
-            $table->editColumn('id', function ($row) {
-                return $row->id ? $row->id : '';
-            });
+//            $table->editColumn('id', function ($row) {
+//                return $row->id ? $row->id : '';
+//            });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });

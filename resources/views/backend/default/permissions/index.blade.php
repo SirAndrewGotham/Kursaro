@@ -25,9 +25,9 @@
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.permission.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.permission.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.permission.fields.title') }}
                     </th>
@@ -38,9 +38,9 @@
                 <tr>
                     <td>
                     </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
@@ -99,7 +99,7 @@
     ajax: "{{ route('admin.permissions.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
+// { data: 'id', name: 'id' },
 { data: 'title', name: 'title' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

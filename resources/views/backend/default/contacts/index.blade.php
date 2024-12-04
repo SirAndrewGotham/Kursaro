@@ -1,6 +1,6 @@
 @extends('backend.default.layouts.app')
 @section('content')
-{{--@can('contact_create')--}}
+@can('contact_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.contacts.create') }}">
@@ -12,7 +12,7 @@
             @include('backend.default.csvImport.modal', ['model' => 'Contact', 'route' => 'admin.contacts.parseCsvImport'])
         </div>
     </div>
-{{--@endcan--}}
+@endcan
 <div class="card">
     <div class="card-header">
         {{ trans('back.contact.title_singular') }} {{ trans('global.list') }}

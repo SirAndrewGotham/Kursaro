@@ -1,6 +1,6 @@
 @extends('backend.default.layouts.app')
 @section('content')
-{{--@can('home_create')--}}
+@can('home_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.homes.create') }}">
@@ -12,7 +12,7 @@
             @include('backend.default.csvImport.modal', ['model' => 'Home', 'route' => 'admin.homes.parseCsvImport'])
         </div>
     </div>
-{{--@endcan--}}
+@endcan
 <div class="card">
     <div class="card-header">
         {{ trans('back.home.title_singular') }} {{ trans('global.list') }}

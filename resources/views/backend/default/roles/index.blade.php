@@ -1,6 +1,6 @@
 @extends('backend.default.layouts.app')
 @section('content')
-{{--@can('role_create')--}}
+@can('role_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.roles.create') }}">
@@ -12,7 +12,7 @@
             @include('backend.default.csvImport.modal', ['model' => 'Role', 'route' => 'admin.roles.parseCsvImport'])
         </div>
     </div>
-{{--@endcan--}}
+@endcan
 <div class="card">
     <div class="card-header">
         {{ trans('back.role.title_singular') }} {{ trans('global.list') }}
@@ -25,9 +25,9 @@
                     <th width="10">
 
                     </th>
-                    <th>
-                        {{ trans('back.role.fields.id') }}
-                    </th>
+{{--                    <th>--}}
+{{--                        {{ trans('back.role.fields.id') }}--}}
+{{--                    </th>--}}
                     <th>
                         {{ trans('back.role.fields.title') }}
                     </th>
@@ -41,9 +41,9 @@
                 <tr>
                     <td>
                     </td>
-                    <td>
-                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
-                    </td>
+{{--                    <td>--}}
+{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
+{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
@@ -110,7 +110,7 @@
     ajax: "{{ route('admin.roles.index') }}",
     columns: [
       { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
+// { data: 'id', name: 'id' },
 { data: 'title', name: 'title' },
 { data: 'permissions', name: 'permissions.title' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
