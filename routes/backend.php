@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route::group(['prefix' => 'admin', [as' => 'admin.', [namespace' => 'App\Http\Controllers\Backend', [middleware' => ['auth', [2fa']], function () {
 //Route::group(['prefix' => 'admin', [as' => 'admin.', [middleware' => ['auth']], function () {
-Route::group(['middleware' => ['auth', 'web']], function () {
+Route::group(['middleware' => ['auth', 'web', 'admin']], function () {
     Route::get('/', function () {
         return view('backend.default.home');
     })->middleware(['auth', 'verified'])->name('home');

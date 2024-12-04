@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="m-0">{{ trans('global.dashboard')}}</h3>
+                        <h3 class="m-0">{{ trans('Dashboard') }}</h3>
                     </div>
 
                     <div class="card-body">
@@ -31,12 +31,12 @@
                                             @endphp
                                             <h3>{{ $homes }}</h3>
 
-                                            <p>{{ trans('Home page translations') }}</p>
+                                            <p>{{ trans_choice('{0} Home page translations|{1} Home page translation|[2,4] Home page translations|[5,19] Home page translations', $homes) }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-bag"></i>
                                         </div>
-                                        <a href="{{ route('admin.homes.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="{{ route('admin.homes.index') }}" class="small-box-footer">{{ trans('More info') }} <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- ./col -->
@@ -49,12 +49,12 @@
                                             @endphp
                                             <h3>{{ $languages }}</h3>
 
-                                            <p>Languages enabled</p>
+                                            <p>{{ trans_choice('{0} Languages enabled|{1} Language enabled|[2,4] Languages enabled|[5,19] Languages enabled', $languages) }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-stats-bars"></i>
                                         </div>
-                                        <a href="{{ route('admin.languages.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="{{ route('admin.languages.index') }}" class="small-box-footer">{{ trans('More info') }} <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- ./col -->
@@ -67,12 +67,12 @@
                                             @endphp
                                             <h3>{{ $pages }}</h3>
 
-                                            <p>System pages</p>
+                                            <p>{{ trans_choice('{0} System pages|{1} System page|[2,4] System pages|[5,19] System pages', $pages) }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-person-add"></i>
                                         </div>
-                                        <a href="{{ route('admin.pages.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="{{ route('admin.pages.index') }}" class="small-box-footer">{{ trans('More info') }} <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- ./col -->
@@ -85,12 +85,12 @@
                                             @endphp
                                             <h3>{{ $users }}</h3>
 
-                                            <p>Users</p>
+                                            <p>{{ trans_choice('{0} Users|{1} User|[2,4] Users|[5,19] Users', $users) }}</p>
                                         </div>
                                         <div class="icon">
                                             <i class="ion ion-pie-graph"></i>
                                         </div>
-                                        <a href="{{ route('admin.users.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        <a href="{{ route('admin.users.index') }}" class="small-box-footer">{{ trans('More info') }} <i class="fas fa-arrow-circle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- ./col -->
