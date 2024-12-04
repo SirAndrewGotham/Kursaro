@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\AuthGates;
+use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -25,6 +26,9 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->appendToGroup('web', SetLocale::class);
         $middleware->appendToGroup('web', ShareErrorsFromSession::class);
+        $middleware->alias([
+            'admin' => IsAdminMiddleware::class
+        ]);
 //        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
 //        $middleware->append(AuthGates::class);
 //        $middleware->append(SetLocale::class);
