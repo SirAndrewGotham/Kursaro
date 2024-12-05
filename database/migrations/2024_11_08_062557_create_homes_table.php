@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->longText('content');
             $table->boolean('is_active')->default(true);
+            $table->bigInteger('views')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

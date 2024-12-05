@@ -88,13 +88,15 @@ class PageController extends Controller
         // second one with the above id and real page data
         // files, if any, attached to the second one
 
-        $page_id = Page::insertGetId([
+//        $page_id = Page::insertGetId([ // can not use this construction
+// as this is not Eloquent, but QueryBuilder, and we need an Eloquent method
+// to be able to generate slug in the model boot
+        $parent = Page::create([
             'is_default' => false,
             'is_active' => true,
             'page_id' => null,
             'language_id' => $request->input('language_id'),
             'title' => $request->input('title'),
-            'slug' => Str::slug($request->title),
             'content' => $request->input('content'),
             'created_at' => now(),
             'updated_at' => now(),
@@ -103,10 +105,9 @@ class PageController extends Controller
         $page = Page::create([
             'is_default' => true,
             'is_active' => true,
-            'page_id' => $page_id,
+            'page_id' => $parent->id,
             'language_id' => $request->input('language_id'),
             'title' => $request->input('title'),
-            'slug' => Str::slug($request->title),
             'content' => $request->input('content'),
         ]);
 
@@ -114,7 +115,7 @@ class PageController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $page->id]);
         }
 
-        return redirect()->route('admin.pages.show', $page_id)->with('message', 'New page created successfully');
+        return redirect()->route('admin.pages.show', $parent->id)->with('message', 'New page created successfully');
     }
 
     public function storeTranslation(StorePageRequest $request, Page $page)

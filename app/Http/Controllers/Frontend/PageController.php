@@ -23,6 +23,11 @@ class PageController extends Controller
             $page = Page::where([['page_id', $parent->id],['is_default', true]])->first();
         }
 
+        $page->timestamps = false;
+        $page->views++;
+        $page->save();
+
+
         return view('frontend.default.home.index', ['content' => $page->content]);
     }
 }

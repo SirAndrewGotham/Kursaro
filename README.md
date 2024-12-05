@@ -8,7 +8,16 @@ Fronte:
 Malfronte:
 ![Kursaro Homepage](docs/images/kursaro-admin.png)
 
-[Kial ĉio startis](docs/eo/gxenerala.md)
+## Demo retejo
+
+Oni povas viziti kaj esplori [Demo retejon](https://kursaro.esperantejo.com) por vidi progreson.
+
+Por eniri Administran parton de la retej, bv. viziti la [/login](https://kursaro.esperantejo.com/login) ligilon kaj enmeti la akreditaĵojn:
+
+- poŝtadreso - admin@admin.com
+- pasvorto - password
+
+## [Kial ĉio startis](docs/eo/gxenerala.md)
 
 ## Teknologioj
 
