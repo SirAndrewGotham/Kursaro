@@ -119,6 +119,12 @@ class UsersController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
+        if(env('APP_ENV', 'demo') == true) {
+            if($user->id == 1)
+            {
+                return redirect()->route('admin.users.index')->with('message', 'You can not change Admin user credentials in the demo system.');
+            }
+        }
         $user->update($request->all());
         $user->roles()->sync($request->input('roles', []));
 
@@ -138,9 +144,11 @@ class UsersController extends Controller
     {
 //        abort_if(Gate::denies('user_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        if($user->id == 1)
-        {
-            return redirect()->route('admin.users.index')->with('message', 'You can not delete this user');
+        if(env('APP_ENV', 'demo') == true) {
+            if($user->id == 1)
+            {
+                return redirect()->route('admin.users.index')->with('message', 'You can not delete Admin user in the demo system.');
+            }
         }
 
         $user->delete();

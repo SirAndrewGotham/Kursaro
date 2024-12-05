@@ -1,8 +1,21 @@
 <x-frontend-layout>
-    <section class="pt-10 pb-10 lg:pt-10 lg:pb-20 dark:bg-dark">
+    <section class="pt-6 pb-10 lg:pt-6 lg:pb-20 dark:bg-dark">
         <div class="container">
 
             @include('frontend.default.layouts.notifications')
+
+            {{-- I am not sure I want this to be visible on the site --}}
+            {{-- Maybe I will make it show once and disappear kind of thing later on --}}
+{{--            @if($_ENV['APP_ENV'] == 'demo')--}}
+{{--                <div class="p-3 mb-4 text-xs text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-600 rounded-md font-light">--}}
+{{--                    <p>Karaj samideanoj!</p>--}}
+{{--                    <p>Se vi deziras vidi Administran parton de tiu ĉi demonstracia retejo, bonvolu uzi la <a href="/login" class="text-blue-300 dark:text-blue-500">/login</a> ligilon kaj la sekvajn akreditaĵojn:</p>--}}
+{{--                    <ul class="pl-4">--}}
+{{--                        <li>poŝtadreso - admin@admin.com</li>--}}
+{{--                        <li>pasvorto - password</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            @endif--}}
 
             <div class="mb-4 text-xl text-dark dark:text-white hover:text-primary dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl">
 {{--                We invite you to learn our language.--}}
