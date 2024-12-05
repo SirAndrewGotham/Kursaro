@@ -29,7 +29,7 @@
             @csrf
             <div class="form-group">
                 <label for="language_id">{{ trans('global.language') }}</label>
-                <select class="form-control select2 {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
+                <select class="form-control {{ $errors->has('language') ? 'is-invalid' : '' }}" name="language_id" id="language_id">
                     @foreach($languages as $id => $entry)
                         <option value="{{ $id }}" {{ old('language_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach

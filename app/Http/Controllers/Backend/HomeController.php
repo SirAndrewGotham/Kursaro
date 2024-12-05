@@ -96,7 +96,7 @@ class HomeController extends Controller
 
     public function store(StoreHomeRequest $request)
     {
-        $exists = Home::where('language_id', $request->language_id);
+        $exists = Home::where('language_id', $request->language_id)->first();
         if($exists)
         {
             return redirect()->route('admin.homes.index')->with('message', 'Such page already exists. You might want to edit it instead of creating anew. If you don\'t see it in the list, it might have been deleted; request your Admin to restore the page before you would be able to edit it.');
