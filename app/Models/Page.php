@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -22,6 +23,21 @@ class Page extends Model implements HasMedia
 //    {
 //        return 'slug';
 //    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($model) {
+            $slug = Str::slug($model->title);
+            $originalSlug = $slug;
+            $count = 2;
+            while (static::whereSlug($slug)->exists()) {
+                $slug = $originalSlug . '-' . $count++;
+            }
+            $model->slug = $slug;
+        });
+    }
 
     public static $searchable = [
         'title',
