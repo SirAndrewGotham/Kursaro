@@ -80,7 +80,7 @@ class User extends Authenticatable
     {
         $this->timestamps            = false;
         $this->two_factor_code       = rand(100000, 999999);
-        $this->two_factor_expires_at = now()->addMinutes(15)->format(config('backend.date_format') . ' ' . config('backend.time_format'));
+        $this->two_factor_expires_at = now()->addMinutes(15)->format(config('kursaro.date_format') . ' ' . config('kursaro.time_format'));
         $this->save();
     }
 
@@ -114,12 +114,12 @@ class User extends Authenticatable
 
     public function getEmailVerifiedAtAttribute($value)
     {
-        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('backend.date_format') . ' ' . config('backend.time_format')) : null;
+        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('kursaro.date_format') . ' ' . config('kursaro.time_format')) : null;
     }
 
     public function setEmailVerifiedAtAttribute($value)
     {
-        $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('backend.date_format') . ' ' . config('backend.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('kursaro.date_format') . ' ' . config('kursaro.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 
     public function setPasswordAttribute($input)
@@ -146,11 +146,11 @@ class User extends Authenticatable
 
     public function getTwoFactorExpiresAtAttribute($value)
     {
-        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('backend.date_format') . ' ' . config('backend.time_format')) : null;
+        return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('kursaro.date_format') . ' ' . config('kursaro.time_format')) : null;
     }
 
     public function setTwoFactorExpiresAtAttribute($value)
     {
-        $this->attributes['two_factor_expires_at'] = $value ? Carbon::createFromFormat(config('backend.date_format') . ' ' . config('backend.time_format'), $value)->format('Y-m-d H:i:s') : null;
+        $this->attributes['two_factor_expires_at'] = $value ? Carbon::createFromFormat(config('kursaro.date_format') . ' ' . config('kursaro.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 }

@@ -8,8 +8,11 @@
 
     <title>{{ trans('panel.site_title') }}</title>
 
-{{--    @include('backend.default.layouts.styles-cdn')--}}
-    @include('backend.default.layouts.styles-local')
+    @if(config('kursaro.styles') == 'cdn')
+        @include('backend.default.layouts.styles-cdn')
+    @else
+        @include('backend.default.layouts.styles-local')
+    @endif
 
     <link href="{{ asset('assets/backend/default/css/custom.css') }}" rel="stylesheet" />
     @stack('styles')
@@ -88,8 +91,11 @@
     </div>
 </div>
 
-{{--@include('backend.default.layouts.scripts-cdn')--}}
-@include('backend.default.layouts.scripts-local')
+@if(config('kursaro.styles') == 'cdn')
+    @include('backend.default.layouts.scripts-cdn')
+@else
+    @include('backend.default.layouts.scripts-local')
+@endif
 
 <script src="{{ asset('assets/backend/default/js/main.js') }}"></script>
 <script>
