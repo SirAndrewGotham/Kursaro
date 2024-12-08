@@ -11,36 +11,6 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label for="language_id">{{ trans('back.page.fields.language') }}:</label>
-                {{ $page->language->english }}
-            </div>
-            <div class="form-group">
-                <div class="form-check {{ $errors->has('is_active') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="is_active" value="0">
-                    <input class="form-check-input" type="checkbox" name="is_active" id="is_active" value="1" {{ $page->is_active || old('is_active', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="is_active">{{ trans('back.page.fields.is_active') }}</label>
-                </div>
-                @if($errors->has('is_active'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('is_active') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('back.page.fields.is_active_helper') }}</span>
-            </div>
-            <div class="form-group">
-                <div class="form-check {{ $errors->has('is_default') ? 'is-invalid' : '' }}">
-                    <input type="hidden" name="is_default" value="0">
-                    <input class="form-check-input" type="checkbox" name="is_default" id="is_default" value="1" {{ $page->is_default || old('is_default', 0) === 1 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="is_default">{{ trans('back.page.fields.is_default') }}</label>
-                </div>
-                @if($errors->has('is_default'))
-                    <div class="invalid-feedback">
-                        {{ $errors->first('is_default') }}
-                    </div>
-                @endif
-                <span class="help-block">{{ trans('back.page.fields.is_default_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="title">{{ trans('back.page.fields.title') }}</label>
                 <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $page->title) }}">
                 @if($errors->has('title'))
@@ -59,6 +29,30 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('back.page.fields.content_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="views">{{ trans('back.page.fields.views') }}</label>
+                <input class="form-control {{ $errors->has('views') ? 'is-invalid' : '' }}" type="number" name="views" id="views" value="{{ old('views', $page->views) }}" step="1">
+                @if($errors->has('views'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('views') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('back.page.fields.views_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="page_id">{{ trans('back.page.fields.page') }}</label>
+                <select class="form-control select2 {{ $errors->has('page') ? 'is-invalid' : '' }}" name="page_id" id="page_id">
+                    @foreach($pages as $id => $entry)
+                        <option value="{{ $id }}" {{ (old('page_id') ? old('page_id') : $page->page->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('page'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('page') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('back.page.fields.page_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

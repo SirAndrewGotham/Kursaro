@@ -1,6 +1,6 @@
 @extends('backend.default.layouts.app')
 @section('content')
-@can('page_create')
+{{--@can('page_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.pages.create') }}">
@@ -12,7 +12,7 @@
             @include('backend.default.csvImport.modal', ['model' => 'Page', 'route' => 'admin.pages.parseCsvImport'])
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 <div class="card">
     <div class="card-header">
         {{ trans('back.page.title_singular') }} {{ trans('global.list') }}
@@ -25,15 +25,15 @@
                     <th width="10">
 
                     </th>
-{{--                    <th>--}}
-{{--                        {{ trans('back.page.fields.id') }}--}}
-{{--                    </th>--}}
+                    <th>
+                        {{ trans('back.page.fields.id') }}
+                    </th>
                     <th>
                         {{ trans('back.page.fields.title') }}
                     </th>
-{{--                    <th>--}}
-{{--                        {{ trans('back.page.fields.views') }}--}}
-{{--                    </th>--}}
+                    <th>
+                        {{ trans('back.page.fields.views') }}
+                    </th>
                     <th>
                         {{ trans('back.page.fields.page') }}
                     </th>
@@ -44,23 +44,22 @@
                 <tr>
                     <td>
                     </td>
-{{--                    <td>--}}
-{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
-{{--                    </td>--}}
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
-{{--                    <td>--}}
-{{--                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">--}}
-{{--                    </td>--}}
                     <td>
-                        {{ trans('back.page.fields.language') }}
-{{--                        <select class="search">--}}
-{{--                            <option value>{{ trans('global.all') }}</option>--}}
-{{--                            @foreach($pages as $key => $item)--}}
-{{--                                <option value="{{ $item->title }}">{{ $item->title }}</option>--}}
-{{--                            @endforeach--}}
-{{--                        </select>--}}
+                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                    </td>
+                    <td>
+                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                    </td>
+                    <td>
+                        <select class="search">
+                            <option value>{{ trans('global.all') }}</option>
+                            @foreach($pages as $key => $item)
+                                <option value="{{ $item->title }}">{{ $item->title }}</option>
+                            @endforeach
+                        </select>
                     </td>
                     <td>
                     </td>
@@ -116,15 +115,15 @@
     aaSorting: [],
     ajax: "{{ route('admin.pages.index') }}",
     columns: [
-        { data: 'placeholder', name: 'placeholder' },
-        // { data: 'id', name: 'id' },
-        { data: 'title', name: 'title' },
-        // { data: 'views', name: 'views' },
-        { data: 'page_title', name: 'page.title' },
-        { data: 'actions', name: '{{ trans('global.actions') }}' }
+      { data: 'placeholder', name: 'placeholder' },
+{ data: 'id', name: 'id' },
+{ data: 'title', name: 'title' },
+{ data: 'views', name: 'views' },
+{ data: 'page_title', name: 'page.title' },
+{ data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
-    order: [[ 1, 'asc' ]],
+    order: [[ 1, 'desc' ]],
     pageLength: 100,
   };
   let table = $('.datatable-Page').DataTable(dtOverrideGlobals);

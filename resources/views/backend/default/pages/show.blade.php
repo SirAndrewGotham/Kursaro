@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('back.page.title_singular') }} <span class="h4 ml-3">{{ $page->title }}</span>
+        {{ trans('global.show') }} {{ trans('back.page.title') }}
     </div>
 
     <div class="card-body">
@@ -15,48 +15,12 @@
             </div>
             <table class="table table-bordered table-striped">
                 <tbody>
-{{--                    <tr>--}}
-{{--                        <th>--}}
-{{--                            {{ trans('back.page.fields.id') }}--}}
-{{--                        </th>--}}
-{{--                        <td>--}}
-{{--                            {{ $page->id }}--}}
-{{--                        </td>--}}
-{{--                    </tr>--}}
-                    @if($page->page_id)
                     <tr>
                         <th>
-                            {{ trans('back.page.fields.is_default') }}
+                            {{ trans('back.page.fields.id') }}
                         </th>
                         <td>
-                            @if($page->is_default)
-                                {{ __('Yes') }}
-                            @else
-                                {{ __('No') }}
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('back.page.fields.is_active') }}
-                        </th>
-                        <td>
-                            @if($page->is_active)
-                                {{ __('Yes') }}
-                            @else
-                                {{ __('No') }}
-                            @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('back.page.fields.language') }}
-                        </th>
-                        <td>
-                            @php
-                                $language = App\Models\Language::where('id', $page->language_id)->first();
-                            @endphp
-                                {{ $language->english }}
+                            {{ $page->id }}
                         </td>
                     </tr>
                     <tr>
@@ -83,30 +47,16 @@
                             {{ $page->views }}
                         </td>
                     </tr>
-                    @endif
                     <tr>
                         <th>
-                            {{ trans('back.page.fields.slug') }}
+                            {{ trans('back.page.fields.page') }}
                         </th>
                         <td>
-                            {{ $page->parent->slug ?? $page->slug }}
+                            {{ $page->page->title ?? '' }}
                         </td>
                     </tr>
                 </tbody>
             </table>
-
-            @if(\App\Models\Page::where('page_id', $page->id)->first())
-            <div class="card">
-                <div class="card-header mb-2">
-                    <h3>{{ trans('back.page.fields.translations') }}
-                        <i class="fa-fw fas fa-arrow-alt-circle-down"></i>
-                    </h3>
-                </div>
-                    <div class="tab-pane" role="tabpanel" id="page_pages">
-                        @includeIf('backend.default.pages.relationships.translations', ['pages' => $page->translations])
-                    </div>
-            </div>
-            @endif
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.pages.index') }}">
                     {{ trans('global.back_to_list') }}
@@ -115,4 +65,23 @@
         </div>
     </div>
 </div>
+
+<div class="card">
+    <div class="card-header">
+        {{ trans('global.relatedData') }}
+    </div>
+    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="#page_pages" role="tab" data-toggle="tab">
+                {{ trans('back.page.title') }}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" role="tabpanel" id="page_pages">
+            @includeIf('admin.pages.relationships.pagePages', ['pages' => $page->pagePages])
+        </div>
+    </div>
+</div>
+
 @endsection

@@ -47,7 +47,7 @@
 
     @yield('styles')
 </head>
-<body x-data="{darkMode: false}" :class="{'dark': darkMode === true }" class="antialiased">
+<body x-cloak x-data="{darkMode: $persist(false)}" :class="{'dark': darkMode === true }" class="antialiased">
 {{-- ====== Navbar Section Start --}}
 @include('frontend.default.layouts.navbar')
 {{--// ====== Navbar Section End --}}
